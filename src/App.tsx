@@ -1,6 +1,5 @@
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import MeetOurTeam from "@/pages/MeetOurTeam";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { SpecializationSection } from "@/components/SpecializationSection";
