@@ -1,6 +1,5 @@
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import LaunchProgram from "@/pages/LaunchProgram";
 import MeetOurTeam from "@/pages/MeetOurTeam";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
@@ -36,12 +35,11 @@ function HomePage() {
   );
 }
 
-function Router() {
+ffunction Router() {
   return (
     <Switch>
       <Route path="/" component={HomePage} />
-      <Route path="/launch-program" component={LaunchProgram} />
-      <Route path="/meet-our-team" component={MeetOurTeam} />
+      <Route component={NotFound} />
     </Switch>
   );
 }
