@@ -35,7 +35,7 @@ function HomePage() {
   );
 }
 
-ffunction Router() {
+function Router() {
   return (
     <Switch>
       <Route path="/" component={HomePage} />
