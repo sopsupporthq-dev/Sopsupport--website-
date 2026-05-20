@@ -12,6 +12,9 @@ import { ResourcesSection } from "@/components/ResourcesSection";
 import { FAQSection } from "@/components/FAQSection";
 import { FinalCTASection } from "@/components/FinalCTASection";
 import { Footer } from "@/components/Footer";
+import LaunchProgram from "@/pages/LaunchProgram";
+import MeetOurTeam from "@/pages/MeetOurTeam";
+import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +42,9 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={HomePage} />
+      <Route path="/launch-program" component={LaunchProgram} />
+      <Route path="/meet-our-team" component={MeetOurTeam} />
+      <Route component={NotFound} />
     </Switch>
   );
 }
