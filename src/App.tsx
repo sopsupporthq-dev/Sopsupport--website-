@@ -1,6 +1,5 @@
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import NotFound from "@/pages/not-found";
 import LaunchProgram from "@/pages/LaunchProgram";
 import MeetOurTeam from "@/pages/MeetOurTeam";
 import { Header } from "@/components/Header";
@@ -43,7 +42,6 @@ function Router() {
       <Route path="/" component={HomePage} />
       <Route path="/launch-program" component={LaunchProgram} />
       <Route path="/meet-our-team" component={MeetOurTeam} />
-      <Route component={NotFound} />
     </Switch>
   );
 }
