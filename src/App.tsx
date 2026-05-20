@@ -39,7 +39,6 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={HomePage} />
-      <Route component={NotFound} />
     </Switch>
   );
 }
