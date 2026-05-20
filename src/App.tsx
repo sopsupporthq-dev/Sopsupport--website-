@@ -56,7 +56,6 @@ function App() {
         <WouterRouter>
           <Router />
         </WouterRouter>
-        <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
   );
