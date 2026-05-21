@@ -1,15 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-
-export const Route = createFileRoute("/launch-program")({
-  head: () => ({
-    meta: [
-      { title: "Agency Launch Program — SOP Support" },
-      { name: "description", content: "A done-for-you launch program for new and growing home health, hospice and home care agencies: website, SEO foundation, automations and recruitment funnel." },
-    ],
-  }),
-  component: LaunchProgram,
-});
-
 import { motion } from "framer-motion";
 import {
   Globe,
@@ -25,9 +14,25 @@ import {
   Heart,
   Home,
   Star,
+  BarChart3,
+  MessageSquare,
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+
+export const Route = createFileRoute("/launch-program")({
+  head: () => ({
+    meta: [
+      { title: "Agency Launch Program — SOP Support" },
+      {
+        name: "description",
+        content:
+          "A done-for-you launch program for new and growing home health, hospice and home care agencies: website, SEO foundation, automations and recruitment funnel.",
+      },
+    ],
+  }),
+  component: LaunchProgram,
+});
 
 const included = [
   {
@@ -65,6 +70,16 @@ const included = [
     title: "Growth Foundation Strategy",
     desc: "Your custom roadmap to attract clients and caregivers — not just a website, but a plan to grow with it.",
   },
+  {
+    icon: BarChart3,
+    title: "Analytics & Performance Tracking",
+    desc: "Track website traffic, form submissions, and key growth activity so your agency can understand what is working.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Referral Partner Contact Flow",
+    desc: "Clear contact paths and referral-focused forms that make it easier for hospitals, clinics, and partners to reach your agency.",
+  },
 ];
 
 const perfectFor = [
@@ -98,13 +113,17 @@ export default function LaunchProgram() {
       <Header />
 
       <main>
-        {/* ── HERO ── */}
-        <section className="relative pt-36 pb-24 overflow-hidden" data-testid="section-launch-hero">
-          {/* Background */}
+        <section
+          className="relative pt-36 pb-24 overflow-hidden"
+          data-testid="section-launch-hero"
+        >
           <div className="absolute inset-0 pointer-events-none">
             <div className="animated-bg-blob bg-emerald-500 w-[550px] h-[550px] top-[-100px] left-[-150px]" />
             <div className="animated-bg-blob bg-cyan-500 w-[400px] h-[400px] top-[20%] right-[-120px] animation-delay-2000" />
-            <div className="animated-bg-blob bg-teal-600 w-[500px] h-[500px] bottom-[-200px] left-[25%] animation-delay-4000" style={{ opacity: 0.15 }} />
+            <div
+              className="animated-bg-blob bg-teal-600 w-[500px] h-[500px] bottom-[-200px] left-[25%] animation-delay-4000"
+              style={{ opacity: 0.15 }}
+            />
             <div
               className="absolute inset-0 opacity-40"
               style={{
@@ -115,7 +134,6 @@ export default function LaunchProgram() {
           </div>
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            {/* Eyebrow badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -130,23 +148,25 @@ export default function LaunchProgram() {
               </div>
             </motion.div>
 
-            {/* Main headline */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-center max-w-4xl mx-auto mb-8"
             >
-              <h1 className="text-5xl lg:text-7xl font-bold leading-[1.08] mb-6 text-white" data-testid="text-launch-headline">
+              <h1
+                className="text-5xl lg:text-7xl font-bold leading-[1.08] mb-6 text-white"
+                data-testid="text-launch-headline"
+              >
                 SOP Support{" "}
                 <span className="text-gradient">Launch Program</span>
               </h1>
               <p className="text-xl lg:text-2xl font-semibold text-white/80 mb-3">
-                Affordable website &amp; growth support built exclusively for home care agencies
+                Affordable website &amp; growth support built exclusively for
+                home care agencies
               </p>
             </motion.div>
 
-            {/* Intro copy */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -154,7 +174,10 @@ export default function LaunchProgram() {
               className="max-w-2xl mx-auto text-center"
             >
               <p className="text-lg text-white/65 leading-relaxed mb-10">
-                Starting a home care agency is tough. You're pouring time, money, and energy into licensing, certifications, background checks, insurance, and operations — all while revenue is still months away.
+                Starting a home care agency is tough. You're pouring time,
+                money, and energy into licensing, certifications, background
+                checks, insurance, and operations — all while revenue is still
+                months away.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.a
@@ -181,8 +204,10 @@ export default function LaunchProgram() {
           </div>
         </section>
 
-        {/* ── THE PROBLEM ── */}
-        <section className="py-20 relative overflow-hidden" data-testid="section-launch-problem">
+        <section
+          className="py-20 relative overflow-hidden"
+          data-testid="section-launch-problem"
+        >
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <motion.div
@@ -198,17 +223,21 @@ export default function LaunchProgram() {
                   </span>
                 </div>
                 <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
-                  Starting an agency means juggling everything — before revenue even starts.
+                  Starting an agency means juggling everything — before revenue
+                  even starts.
                 </h2>
                 <p className="text-white/65 leading-relaxed mb-6">
-                  That's exactly why we created the SOP Support Launch Program — the smartest, most affordable way for startup agencies to launch with a professional online presence and a real growth foundation — without a large upfront payment.
+                  That's exactly why we created the SOP Support Launch Program —
+                  the smartest, most affordable way for startup agencies to
+                  launch with a professional online presence and a real growth
+                  foundation — without a large upfront payment.
                 </p>
                 <p className="text-lg font-semibold text-emerald-300 leading-relaxed">
-                  Launch looking established, credible, and ready for clients — even before you've booked your first patient.
+                  Launch looking established, credible, and ready for clients —
+                  even before you've booked your first patient.
                 </p>
               </motion.div>
 
-              {/* Challenge pills */}
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
@@ -218,15 +247,19 @@ export default function LaunchProgram() {
               >
                 {challenges.map((item, i) => (
                   <motion.div
-                    key={i}
+                    key={item}
                     variants={itemVariant}
                     className="flex items-center gap-3 glass-panel rounded-xl p-4 border-amber-500/10"
                     data-testid={`challenge-item-${i}`}
                   >
                     <div className="w-7 h-7 shrink-0 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
-                      <span className="text-xs font-bold text-amber-400">{i + 1}</span>
+                      <span className="text-xs font-bold text-amber-400">
+                        {i + 1}
+                      </span>
                     </div>
-                    <span className="text-sm font-medium text-white/75">{item}</span>
+                    <span className="text-sm font-medium text-white/75">
+                      {item}
+                    </span>
                   </motion.div>
                 ))}
               </motion.div>
@@ -234,8 +267,11 @@ export default function LaunchProgram() {
           </div>
         </section>
 
-        {/* ── WHAT'S INCLUDED ── */}
-        <section id="whats-included" className="py-24 relative overflow-hidden" data-testid="section-launch-included">
+        <section
+          id="whats-included"
+          className="py-24 relative overflow-hidden"
+          data-testid="section-launch-included"
+        >
           <div className="absolute inset-0 pointer-events-none">
             <div className="animated-bg-blob bg-emerald-600 w-[500px] h-[500px] top-[10%] right-[-150px] opacity-20" />
           </div>
@@ -259,7 +295,8 @@ export default function LaunchProgram() {
                 <span className="text-gradient">launch with confidence</span>
               </h2>
               <p className="text-lg text-white/60 max-w-xl mx-auto">
-                One program. One monthly payment. A complete professional foundation for your agency.
+                One program. One monthly payment. A complete professional
+                foundation for your agency.
               </p>
             </motion.div>
 
@@ -272,25 +309,34 @@ export default function LaunchProgram() {
             >
               {included.map((item, i) => (
                 <motion.div
-                  key={i}
+                  key={item.title}
                   variants={itemVariant}
-                  whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(16,185,129,0.15)" }}
+                  whileHover={{
+                    y: -6,
+                    boxShadow: "0 20px 40px rgba(16,185,129,0.15)",
+                  }}
                   className="glass-panel rounded-2xl p-7 border-white/10 group transition-all duration-300 cursor-default"
                   data-testid={`card-included-${i}`}
                 >
                   <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-5 group-hover:bg-emerald-500/20 group-hover:border-emerald-500/40 transition-all duration-300">
                     <item.icon className="w-5 h-5 text-emerald-400" />
                   </div>
-                  <h3 className="text-base font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-sm text-white/55 leading-relaxed">{item.desc}</p>
+                  <h3 className="text-base font-bold text-white mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-white/55 leading-relaxed">
+                    {item.desc}
+                  </p>
                 </motion.div>
               ))}
             </motion.div>
           </div>
         </section>
 
-        {/* ── PERFECT FOR ── */}
-        <section className="py-20 relative overflow-hidden" data-testid="section-launch-perfect-for">
+        <section
+          className="py-20 relative overflow-hidden"
+          data-testid="section-launch-perfect-for"
+        >
           <div className="absolute inset-0 pointer-events-none">
             <div className="animated-bg-blob bg-teal-500 w-[400px] h-[400px] bottom-[-100px] left-[-80px] opacity-15 animation-delay-2000" />
           </div>
@@ -318,27 +364,34 @@ export default function LaunchProgram() {
             <div className="flex flex-wrap justify-center gap-5">
               {perfectFor.map((item, i) => (
                 <motion.div
-                  key={i}
+                  key={item.label}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
-                  whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(16,185,129,0.2)" }}
+                  whileHover={{
+                    y: -5,
+                    boxShadow: "0 20px 40px rgba(16,185,129,0.2)",
+                  }}
                   className="flex items-center gap-3 px-8 py-5 rounded-2xl glass-panel border-emerald-500/25 cursor-default transition-all duration-300"
                   data-testid={`perfect-for-${i}`}
                 >
                   <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
                     <item.icon className="w-5 h-5 text-emerald-400" />
                   </div>
-                  <span className="text-base font-bold text-white">{item.label}</span>
+                  <span className="text-base font-bold text-white">
+                    {item.label}
+                  </span>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── PROMISE SECTION ── */}
-        <section className="py-24 relative overflow-hidden" data-testid="section-launch-promise">
+        <section
+          className="py-24 relative overflow-hidden"
+          data-testid="section-launch-promise"
+        >
           <div className="absolute inset-0 pointer-events-none">
             <div className="animated-bg-blob bg-cyan-600 w-[500px] h-[500px] top-[-80px] right-[10%] opacity-15 animation-delay-4000" />
           </div>
@@ -359,7 +412,8 @@ export default function LaunchProgram() {
               </div>
 
               <h2 className="text-3xl lg:text-5xl font-bold text-white mb-8 leading-tight">
-                A polished, high-converting website that builds instant trust — for one simple monthly payment.
+                A polished, high-converting website that builds instant trust —
+                for one simple monthly payment.
               </h2>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
@@ -376,15 +430,18 @@ export default function LaunchProgram() {
                     headline: "Position as the Professional Choice",
                     desc: "Look established and credible in your market from day one.",
                   },
-                ].map((promise, i) => (
+                ].map((promise) => (
                   <div
-                    key={i}
+                    key={promise.headline}
                     className="rounded-2xl bg-white/5 border border-white/8 p-6 text-left"
-                    data-testid={`promise-${i}`}
                   >
                     <CheckCircle2 className="w-5 h-5 text-emerald-400 mb-3" />
-                    <h3 className="text-sm font-bold text-white mb-2">{promise.headline}</h3>
-                    <p className="text-xs text-white/55 leading-relaxed">{promise.desc}</p>
+                    <h3 className="text-sm font-bold text-white mb-2">
+                      {promise.headline}
+                    </h3>
+                    <p className="text-xs text-white/55 leading-relaxed">
+                      {promise.desc}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -394,16 +451,14 @@ export default function LaunchProgram() {
                   "No massive upfront investment.",
                   "No waiting until you're ready.",
                   "Just a professional launch — from day one.",
-                ].map((point, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-3"
-                    data-testid={`promise-point-${i}`}
-                  >
+                ].map((point) => (
+                  <div key={point} className="flex items-center gap-3">
                     <div className="w-5 h-5 shrink-0 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center">
                       <CheckCircle2 className="w-3 h-3 text-emerald-400" />
                     </div>
-                    <span className="text-sm font-semibold text-white/85">{point}</span>
+                    <span className="text-sm font-semibold text-white/85">
+                      {point}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -411,14 +466,26 @@ export default function LaunchProgram() {
           </div>
         </section>
 
-        {/* ── FINAL CTA ── */}
-        <section id="get-started" className="py-28 relative overflow-hidden" data-testid="section-launch-cta">
+        <section
+          id="get-started"
+          className="py-28 relative overflow-hidden"
+          data-testid="section-launch-cta"
+        >
           <div
             className="absolute inset-0"
-            style={{ background: "linear-gradient(135deg, #022c1a 0%, #0c2132 50%, #022c1a 100%)" }}
+            style={{
+              background:
+                "linear-gradient(135deg, #022c1a 0%, #0c2132 50%, #022c1a 100%)",
+            }}
           />
-          <div className="animated-bg-blob bg-emerald-500 w-[500px] h-[500px] top-[-150px] left-[10%] absolute" style={{ opacity: 0.22 }} />
-          <div className="animated-bg-blob bg-cyan-500 w-[400px] h-[400px] bottom-[-150px] right-[5%] absolute animation-delay-2000" style={{ opacity: 0.18 }} />
+          <div
+            className="animated-bg-blob bg-emerald-500 w-[500px] h-[500px] top-[-150px] left-[10%] absolute"
+            style={{ opacity: 0.22 }}
+          />
+          <div
+            className="animated-bg-blob bg-cyan-500 w-[400px] h-[400px] bottom-[-150px] right-[5%] absolute animation-delay-2000"
+            style={{ opacity: 0.18 }}
+          />
           <div
             className="absolute inset-0 opacity-50"
             style={{
@@ -445,12 +512,15 @@ export default function LaunchProgram() {
                 Ready to launch your agency with a real digital foundation?
               </h2>
               <p className="text-lg text-white/65 mb-10 leading-relaxed">
-                Book a free consultation and learn how the SOP Support Launch Program can get your agency online, looking professional, and ready to attract clients and caregivers — without a large upfront cost.
+                Book a free consultation and learn how the SOP Support Launch
+                Program can get your agency online, looking professional, and
+                ready to attract clients and caregivers — without a large
+                upfront cost.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.a
-                  href="#"
+                  href="/contact"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="inline-flex items-center justify-center gap-2 h-14 px-10 text-base font-bold rounded-full bg-white text-emerald-900 shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.3)] transition-all duration-300 no-default-hover-elevate"
