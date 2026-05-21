@@ -7,7 +7,6 @@ import { SpecializationSection } from "@/components/SpecializationSection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { AgencyProblemsSection } from "@/components/AgencyProblemsSection";
 import { ResourcesSection } from "@/components/ResourcesSection";
-import { FAQSection } from "@/components/FAQSection";
 import { FinalCTASection } from "@/components/FinalCTASection";
 
 export const Route = createFileRoute("/")({
@@ -88,7 +87,6 @@ function HomePage() {
           to="/results"
         />
         <ResourcesSection />
-        <FAQSection />
         <FinalCTASection />
       </main>
       <Footer />
