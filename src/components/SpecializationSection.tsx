@@ -37,7 +37,7 @@ export function SpecializationSection() {
           </h2>
           <p className="text-lg text-white/70 leading-relaxed mb-12 max-w-2xl mx-auto">
             SOP Support focuses on one market: home health, hospice, and home care agencies.
-            That means every page, message, CTA, form, SEO plan, and automation system is
+            That means every page, message, Call to Action (CTA), form, SEO plan, and automation system is
             created around the way care agencies actually grow.
           </p>
 
