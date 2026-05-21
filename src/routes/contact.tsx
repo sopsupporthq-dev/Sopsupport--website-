@@ -1,0 +1,196 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Loader2 } from "lucide-react";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
+
+export const Route = createFileRoute("/contact")({
+  head: () => ({
+    meta: [
+      { title: "Contact — SOP Support" },
+      { name: "description", content: "Get in touch with SOP Support to scope a website, SEO or growth system for your home care, home health or hospice agency." },
+    ],
+  }),
+  component: ContactPage,
+});
+
+const services = [
+  "Premium Agency Website",
+  "Local SEO System",
+  "Automation Workflows",
+  "Caregiver Recruitment Funnel",
+  "Referral Growth System",
+  "Full Launch Program",
+  "Not sure yet",
+];
+
+function ContactPage() {
+  const [submitting, setSubmitting] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const payload = {
+      name: String(form.get("name") || "").trim(),
+      agency_name: String(form.get("agency_name") || "").trim() || null,
+      email: String(form.get("email") || "").trim(),
+      phone: String(form.get("phone") || "").trim() || null,
+      service_interest: String(form.get("service_interest") || "").trim() || null,
+      current_website: String(form.get("current_website") || "").trim() || null,
+      message: String(form.get("message") || "").trim(),
+    };
+
+    if (!payload.name || !payload.email || !payload.message) {
+      toast.error("Please fill in name, email and message.");
+      return;
+    }
+
+    setSubmitting(true);
+    const { error } = await supabase.from("contact_submissions").insert(payload);
+    setSubmitting(false);
+
+    if (error) {
+      console.error(error);
+      toast.error("Something went wrong. Please email hello@sopsupport.com.");
+      return;
+    }
+
+    setSent(true);
+    (e.target as HTMLFormElement).reset();
+    toast.success("Thanks — we'll be in touch within one business day.");
+  }
+
+  return (
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <Header />
+      <div className="absolute top-32 -left-32 w-[40rem] h-[40rem] rounded-full bg-emerald-500/20 blur-[120px] animated-bg-blob" />
+      <div className="absolute top-96 -right-32 w-[40rem] h-[40rem] rounded-full bg-cyan-500/20 blur-[120px] animated-bg-blob animation-delay-2000" />
+
+      <main className="relative pt-32 pb-24 px-6">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-5 gap-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-2"
+          >
+            <span className="inline-block px-4 py-1.5 mb-5 text-xs font-semibold tracking-widest uppercase rounded-full glass-panel text-emerald-300">
+              Contact
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+              Let's grow your <span className="text-gradient">agency</span>
+            </h1>
+            <p className="mt-5 text-muted-foreground leading-relaxed">
+              Tell us about your agency and the outcomes you want. We typically reply within one business day with the next step.
+            </p>
+
+            <div className="mt-10 space-y-5">
+              <div className="flex items-center gap-3 text-sm text-white/80">
+                <Mail className="w-4 h-4 text-emerald-300" />
+                hello@sopsupport.com
+              </div>
+              <div className="flex items-center gap-3 text-sm text-white/80">
+                <Phone className="w-4 h-4 text-emerald-300" />
+                Available by request
+              </div>
+              <div className="flex items-center gap-3 text-sm text-white/80">
+                <MapPin className="w-4 h-4 text-emerald-300" />
+                Serving care agencies nationwide
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="lg:col-span-3"
+          >
+            <form
+              onSubmit={onSubmit}
+              className="glass-panel rounded-3xl p-8 md:p-10 space-y-5"
+            >
+              <div className="grid sm:grid-cols-2 gap-5">
+                <Field id="name" label="Your name" required>
+                  <Input id="name" name="name" required placeholder="Jane Doe" />
+                </Field>
+                <Field id="agency_name" label="Agency name">
+                  <Input id="agency_name" name="agency_name" placeholder="Bright Path Home Care" />
+                </Field>
+                <Field id="email" label="Email" required>
+                  <Input id="email" name="email" type="email" required placeholder="you@agency.com" />
+                </Field>
+                <Field id="phone" label="Phone">
+                  <Input id="phone" name="phone" type="tel" placeholder="(555) 000-0000" />
+                </Field>
+                <Field id="service_interest" label="Service interested in">
+                  <select
+                    id="service_interest"
+                    name="service_interest"
+                    defaultValue=""
+                    className="flex h-10 w-full rounded-md border border-input bg-background/40 px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                  >
+                    <option value="">Select a service</option>
+                    {services.map((s) => (
+                      <option key={s} value={s}>{s}</option>
+                    ))}
+                  </select>
+                </Field>
+                <Field id="current_website" label="Current website">
+                  <Input id="current_website" name="current_website" placeholder="https://" />
+                </Field>
+              </div>
+              <Field id="message" label="What are you trying to solve?" required>
+                <Textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={5}
+                  placeholder="Tell us about your agency, goals and timeline."
+                />
+              </Field>
+
+              <button
+                type="submit"
+                disabled={submitting}
+                className="inline-flex items-center justify-center gap-2 h-12 w-full md:w-auto px-8 text-sm font-semibold rounded-full text-white bg-gradient-glow tracking-wide disabled:opacity-60"
+              >
+                {submitting && <Loader2 className="w-4 h-4 animate-spin" />}
+                {sent ? "Sent — thank you" : "Send message"}
+              </button>
+            </form>
+          </motion.div>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+function Field({
+  id,
+  label,
+  required,
+  children,
+}: {
+  id: string;
+  label: string;
+  required?: boolean;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="space-y-2">
+      <Label htmlFor={id} className="text-xs uppercase tracking-widest text-white/70">
+        {label} {required && <span className="text-emerald-300">*</span>}
+      </Label>
+      {children}
+    </div>
+  );
+}
