@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "What makes SOP Support different?",
-    a: "We combine modern design, home care expertise, automation systems, recruiting strategy, SEO, and conversion-focused websites. Most agencies only offer one piece of the puzzle. We help build the entire growth infrastructure behind your agency.",
+    a: "We combine modern design, home care expertise, automation systems, recruiting strategy, SEO, and conversion-focused websites. Most agencies only offer one piece of the puzzle. We help build the entire growth infrastructure behind your care agency.",
   },
 ];
 
