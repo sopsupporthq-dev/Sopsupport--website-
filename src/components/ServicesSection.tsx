@@ -20,7 +20,7 @@ const services = [
   {
     icon: Wrench,
     title: "Website Support",
-    desc: "Ongoing updates, performance optimization, and technical support — so you never go it alone.",
+    desc: "Ongoing updates, performance optimization, and technical support — so you never go at it alone.",
   },
 ];
 
