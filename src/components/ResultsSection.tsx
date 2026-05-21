@@ -10,7 +10,7 @@ const results = [
   {
     icon: TrendingUp,
     headline: "Designed to increase qualified inquiries",
-    desc: "Clear messaging, strong CTAs, and conversion-focused layouts help turn visitors into contacts.",
+    desc: "Clear messaging, strong call to action (CTAs), and conversion-focused layouts help turn visitors into contacts.",
   },
   {
     icon: MapPin,
