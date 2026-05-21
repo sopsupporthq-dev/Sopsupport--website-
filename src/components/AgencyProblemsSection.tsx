@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { AlertTriangle } from "lucide-react";
 
 const problems = [
-  "Families cannot understand your services quickly — and leave before making contact.",
   "Referral partners do not see a professional online presence and hesitate to send clients.",
+  "Families cannot understand your services quickly — and leave before making contact.",
   "Your agency does not rank well locally, so potential clients find your competitors first.",
   "Caregiver applicants visit your site and don't apply — your recruiting flow isn't converting.",
   "Manual follow-ups waste staff time and slow down your intake and response process.",
