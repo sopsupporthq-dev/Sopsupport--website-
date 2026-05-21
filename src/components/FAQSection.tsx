@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "Is there a contract?",
-    a: "No long-term contracts. You can pause or cancel anytime.",
+    a: "Yes — we use a simple agreement for all projects.",
   },
   {
     q: "How fast is turnaround?",
