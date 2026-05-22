@@ -46,7 +46,7 @@ const challenges = [
 
 const reasons = [
   { icon: Target, title: "One focused niche", body: "We build only for home health, hospice, and home care agencies." },
-  { icon: ShieldCheck, title: "Built around trust", body: "Every page is designed to make families, referral partners, and caregivers feel confident." },
+  { icon: ShieldCheck, title: "Built around trust", body: "Every page is designed to make referral partners, families, and caregivers feel confident." },
   { icon: TrendingUp, title: "Growth-ready structure", body: "Your website is built to support SEO, referrals, recruitment, automation, and long-term scaling." },
   { icon: Layers, title: "Not just a website", body: "We help create a digital foundation that supports your agency's growth systems." },
 ];
