@@ -160,7 +160,7 @@ export default function LaunchProgram() {
                   className="text-5xl lg:text-7xl font-bold leading-[1.08] text-white"
                   data-testid="text-launch-headline"
                   >
-                  SOP Support{" "}
+                  The SOP Support{" "}
                   <span className="text-gradient">
                     Launch Program<span className="relative inline-flex items-center"> 
                       <motion.span
