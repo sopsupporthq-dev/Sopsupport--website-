@@ -14,7 +14,7 @@ export const Route = createFileRoute("/")({
     meta: [
       {
         title:
-          "SOP Support — Websites, SEO & Growth Systems for Home Care Agencies",
+          "SOP Support — Websites, SEO & Digital Growth Systems for Home Care Agencies",
       },
       {
         name: "description",
@@ -104,7 +104,7 @@ function HomePage() {
         <PreviewCTA
           eyebrow="FAQ"
           title="Have questions before upgrading your agency website?"
-          body="Learn how SOP Support handles websites, SEO, automation, recruitment funnels, and growth systems for home health, hospice, and home care agencies."
+          body="Learn how SOP Support handles websites, SEO, automation, recruitment funnels, and digital growth systems for home health, hospice, and home care agencies."
           cta="View FAQs"
           to="/faq"
         />
