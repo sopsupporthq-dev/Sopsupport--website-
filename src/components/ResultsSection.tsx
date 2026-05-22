@@ -5,7 +5,7 @@ const results = [
   {
     icon: ShieldCheck,
     headline: "Built to improve website credibility",
-    desc: "A modern, professional site helps families and referral partners trust your agency before the first call.",
+    desc: "A modern, professional site helps referral partners and families trust your agency before the first call.",
   },
   {
     icon: TrendingUp,
