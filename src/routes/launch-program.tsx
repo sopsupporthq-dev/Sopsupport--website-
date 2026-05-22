@@ -162,8 +162,7 @@ export default function LaunchProgram() {
                   >
                   SOP Support{" "}
                   <span className="text-gradient">
-                    Launch <span className="relative inline-flex items-center">
-                      Program
+                    Launch Program<span className="relative inline-flex items-center"> 
                       <motion.span
                         initial={{ opacity: 0, scale: 0.7, rotate: -25 }}
                         animate={{
@@ -179,7 +178,7 @@ export default function LaunchProgram() {
                           y: {
                             duration: 2.2,
                             repeat: Infinity,
-              ease: "easeInOut",
+                            ease: "easeInOut",
                           },
                           x: {
                             duration: 2.2,
