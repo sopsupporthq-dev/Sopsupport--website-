@@ -9,10 +9,12 @@ const footerLinks = {
     "Website Support",
   ],
   industries: [
-    "Home Care Agencies",
     "Home Health Agencies",
     "Hospice Providers",
     "Senior Care Companies",
+    "Long-Term Care & Home-Based Care Providers",
+    "Revenue Cycle & Billing Vendors",
+    "Clinical Documentation & QA Firms",    
   ],
   quickLinks: [
     { label: "Home", href: "/" },
