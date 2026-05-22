@@ -10,7 +10,7 @@ const services = [
   {
     icon: Search,
     title: "SEO & Local Visibility",
-    desc: "Help families and referral partners find your agency first in local searches.",
+    desc: "Help referral partners and families find your agency first in local searches.",
   },
   {
     icon: UserCheck,
