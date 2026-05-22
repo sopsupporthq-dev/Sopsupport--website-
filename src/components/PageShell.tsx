@@ -52,7 +52,7 @@ export function PageShell({
 
 export function CTASection({
   title = "Ready to grow your agency?",
-  body = "Book a free consultation and we'll map out the website, SEO and automation systems your agency needs to win more families, referrals and caregivers.",
+  body = "Book a free consultation and we'll map out the website, SEO and automation systems your agency needs to win more referrals, families and caregivers.",
   href = "/contact",
   cta = "Book a Free Consultation",
 }: {
