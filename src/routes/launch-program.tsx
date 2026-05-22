@@ -16,6 +16,7 @@ import {
   Star,
   BarChart3,
   MessageSquare,
+  Rocket,
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -154,13 +155,31 @@ export default function LaunchProgram() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-center max-w-4xl mx-auto mb-8"
             >
-              <h1
-                className="text-5xl lg:text-7xl font-bold leading-[1.08] mb-6 text-white"
-                data-testid="text-launch-headline"
-              >
-                SOP Support{" "}
-                <span className="text-gradient">Launch Program</span>
-              </h1>
+              <div className="relative inline-block mb-6">
+                <motion.div
+                  initial={{ opacity: 0, y: 20, rotate: -20 }}
+                  animate={{ opacity: 1, y: 0, rotate: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  whileInView={{
+                    y: [0, -10, 0],
+                    x: [0, 8, 0],
+                    rotate: [-8, 8, -8],
+                  }}
+                  viewport={{ once: false }}
+                  className="absolute -top-8 -right-10 md:-top-10 md:-right-14 hidden sm:flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-400/10 shadow-[0_0_35px_rgba(34,211,238,0.35)] backdrop-blur-md"
+                >
+                  <Rocket className="h-7 w-7 text-cyan-300" />
+                </motion.div>
+
+                <h1
+                  className="text-5xl lg:text-7xl font-bold leading-[1.08] text-white"
+                  data-testid="text-launch-headline"
+                >
+                  SOP Support{" "}
+                  <span className="text-gradient">Launch Program</span>
+                </h1>
+              </div>
+
               <p className="text-xl lg:text-2xl font-semibold text-white/80 mb-3">
                 Affordable website &amp; growth support built exclusively for
                 home care agencies
@@ -179,6 +198,7 @@ export default function LaunchProgram() {
                 checks, insurance, and operations — all while revenue is still
                 months away.
               </p>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.a
                   href="#get-started"
@@ -190,6 +210,7 @@ export default function LaunchProgram() {
                   Book a Free Consultation
                   <ArrowRight className="w-5 h-5" />
                 </motion.a>
+
                 <motion.a
                   href="#whats-included"
                   whileHover={{ scale: 1.03 }}
@@ -222,16 +243,19 @@ export default function LaunchProgram() {
                     We Get It
                   </span>
                 </div>
+
                 <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
                   Starting an agency means juggling everything — before revenue
                   even starts.
                 </h2>
+
                 <p className="text-white/65 leading-relaxed mb-6">
                   That's exactly why we created the SOP Support Launch Program —
                   the smartest, most affordable way for startup agencies to
                   launch with a professional online presence and a real growth
                   foundation — without a large upfront payment.
                 </p>
+
                 <p className="text-lg font-semibold text-emerald-300 leading-relaxed">
                   Launch looking established, credible, and ready for clients —
                   even before you've booked your first patient.
@@ -290,10 +314,12 @@ export default function LaunchProgram() {
                   What's Included
                 </span>
               </div>
+
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
                 Everything you need to{" "}
                 <span className="text-gradient">launch with confidence</span>
               </h2>
+
               <p className="text-lg text-white/60 max-w-xl mx-auto">
                 One program. One monthly payment. A complete professional
                 foundation for your agency.
@@ -321,9 +347,11 @@ export default function LaunchProgram() {
                   <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-5 group-hover:bg-emerald-500/20 group-hover:border-emerald-500/40 transition-all duration-300">
                     <item.icon className="w-5 h-5 text-emerald-400" />
                   </div>
+
                   <h3 className="text-base font-bold text-white mb-3">
                     {item.title}
                   </h3>
+
                   <p className="text-sm text-white/55 leading-relaxed">
                     {item.desc}
                   </p>
@@ -355,6 +383,7 @@ export default function LaunchProgram() {
                   Perfect For
                 </span>
               </div>
+
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
                 Built for agencies{" "}
                 <span className="text-gradient">just like yours</span>
@@ -379,6 +408,7 @@ export default function LaunchProgram() {
                   <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
                     <item.icon className="w-5 h-5 text-emerald-400" />
                   </div>
+
                   <span className="text-base font-bold text-white">
                     {item.label}
                   </span>
@@ -456,6 +486,7 @@ export default function LaunchProgram() {
                     <div className="w-5 h-5 shrink-0 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center">
                       <CheckCircle2 className="w-3 h-3 text-emerald-400" />
                     </div>
+
                     <span className="text-sm font-semibold text-white/85">
                       {point}
                     </span>
@@ -511,6 +542,7 @@ export default function LaunchProgram() {
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight">
                 Ready to launch your agency with a real digital foundation?
               </h2>
+
               <p className="text-lg text-white/65 mb-10 leading-relaxed">
                 Book a free consultation and learn how the SOP Support Launch
                 Program can get your agency online, looking professional, and
@@ -528,6 +560,7 @@ export default function LaunchProgram() {
                 >
                   Schedule Free Consultation
                 </motion.a>
+
                 <motion.a
                   href="/"
                   whileHover={{ scale: 1.03 }}
