@@ -4,20 +4,20 @@ export const resources = [
   {
     icon: FileText,
     type: "Guide",
-    title: "The Home Care Website Checklist",
-    body: "31 things every agency website should include to build family trust, improve local visibility, and guide visitors toward action.",
+    title: "CMS Provider Enrollment Moratoria — What Home Health Agencies Need to Know",
+    body: "A modern executive-style infographic explaining the 2026 CMS enrollment moratorium, its impact on home health agencies, and key compliance considerations.",
     pdf: "/pdfs/resource-1.pdf",
     buttonText: "Open Guide",
   },
   {
     icon: BookOpen,
     type: "Playbook",
-    title: "Local SEO Playbook for Care Agencies",
-    body: "A practical framework for improving local search visibility with service-area pages, Google Business Profile basics, reviews, and website structure.",
+    title: "Why a Professional Website Matters for Home Health Agencies",
+    body: "A branded healthcare marketing infographic highlighting how professional websites improve trust, referrals, visibility, compliance readiness, and agency growth.",
     pdf: "/pdfs/resource-2.pdf",
     buttonText: "Open Playbook",
   },
-  {
+  /*{
     icon: Video,
     type: "Workshop",
     title: "Caregiver Recruitment Funnel Walkthrough",
@@ -33,4 +33,5 @@ export const resources = [
     pdf: "/pdfs/resource-4.pdf",
     buttonText: "Open Template",
   },
+  */
 ];
