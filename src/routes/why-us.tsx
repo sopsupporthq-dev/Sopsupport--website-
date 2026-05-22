@@ -30,7 +30,7 @@ export const Route = createFileRoute("/why-us")({
 
 const services = [
   { icon: Globe, title: "Website Design", body: "Built specifically for care agencies — not generic templates. Modern, fast, and conversion-ready." },
-  { icon: Search, title: "SEO & Local Visibility", body: "Help families and referral partners find your agency first in local searches." },
+  { icon: Search, title: "SEO & Local Visibility", body: "Help referral partners and families find your agency first in local searches." },
   { icon: Users, title: "Referral Systems", body: "Capture and follow up with referral partners automatically through purpose-built lead forms." },
   { icon: LifeBuoy, title: "Website Support", body: "Ongoing updates, performance optimization, and technical support as your agency grows." },
 ];
