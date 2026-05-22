@@ -156,27 +156,48 @@ export default function LaunchProgram() {
               className="text-center max-w-4xl mx-auto mb-8"
             >
               <div className="relative inline-block mb-6">
-                <motion.div
-                  initial={{ opacity: 0, y: 20, rotate: -20 }}
-                  animate={{ opacity: 1, y: 0, rotate: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  whileInView={{
-                    y: [0, -10, 0],
-                    x: [0, 8, 0],
-                    rotate: [-8, 8, -8],
-                  }}
-                  viewport={{ once: false }}
-                  className="absolute -top-8 -right-10 md:-top-10 md:-right-14 hidden sm:flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-400/10 shadow-[0_0_35px_rgba(34,211,238,0.35)] backdrop-blur-md"
-                >
-                  <Rocket className="h-7 w-7 text-cyan-300" />
-                </motion.div>
-
                 <h1
                   className="text-5xl lg:text-7xl font-bold leading-[1.08] text-white"
                   data-testid="text-launch-headline"
-                >
+                  >
                   SOP Support{" "}
-                  <span className="text-gradient">Launch Program</span>
+                  <span className="text-gradient">
+                    Launch <span className="relative inline-flex items-center">
+                      Program
+                      <motion.span
+                        initial={{ opacity: 0, scale: 0.7, rotate: -25 }}
+                        animate={{
+                          opacity: 1,
+                          scale: 1,
+                          y: [0, -10, 0],
+                          x: [0, 6, 0],
+                          rotate: [-12, 8, -12],
+                        }}
+                        transition={{
+                          opacity: { duration: 0.4, delay: 0.4 },
+                          scale: { duration: 0.4, delay: 0.4 },
+                          y: {
+                            duration: 2.2,
+                            repeat: Infinity,
+              ease: "easeInOut",
+                          },
+                          x: {
+                            duration: 2.2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          },
+                          rotate: {
+                            duration: 2.2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          },
+                        }}
+                        className="absolute -right-14 -top-8 hidden h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-400/10 shadow-[0_0_35px_rgba(34,211,238,0.45)] backdrop-blur-md sm:flex md:-right-16 md:-top-10"
+                        >
+                        <Rocket className="h-6 w-6 text-cyan-300" />
+                      </motion.span>
+                    </span>
+                  </span>
                 </h1>
               </div>
 
