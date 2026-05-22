@@ -25,7 +25,7 @@ export function Header() {
             </span>
           </div>
           <span className="text-[10px] text-muted-foreground uppercase tracking-widest font-semibold mt-0.5">
-            Websites & Growth Systems for Care Agencies
+            Websites & Digital Growth Systems for Care Agencies
           </span>
         </Link>
 
