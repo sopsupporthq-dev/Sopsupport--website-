@@ -3,8 +3,10 @@ import {
   Outlet,
   Link,
   createRootRouteWithContext,
+  useLocation,
   useRouter,
 } from "@tanstack/react-router";
+import { AnimatePresence, motion } from "framer-motion";
 import { Toaster } from "sonner";
 
 function NotFoundComponent() {
@@ -107,12 +109,42 @@ export const Route = createRootRouteWithContext<{
   errorComponent: ErrorComponent,
 });
 
+function PageTransition() {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.div
+        key={location.pathname}
+        initial={{
+          opacity: 0,
+          y: 14,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        exit={{
+          opacity: 0,
+          y: -8,
+        }}
+        transition={{
+          duration: 0.28,
+          ease: "easeInOut",
+        }}
+      >
+        <Outlet />
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <PageTransition />
       <Toaster theme="dark" position="top-right" richColors />
     </QueryClientProvider>
   );
