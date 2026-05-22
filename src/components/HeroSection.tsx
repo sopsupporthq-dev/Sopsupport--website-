@@ -29,7 +29,7 @@ export function HeroSection() {
             </div>
 
             <h1 className="text-5xl lg:text-7xl font-bold leading-[1.1] mb-6 text-white" data-testid="text-hero-headline">
-              The Website & Growth Partner for <br />
+              The Website & Digital Growth Partner for <br />
               <span className="text-gradient">Home Health, Hospice & Home Care</span> Agencies
             </h1>
 
