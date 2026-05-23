@@ -67,9 +67,8 @@ function WhyUsPage() {
             transition={{ duration: 0.6 }}
             className="inline-flex flex-col items-center gap-1 px-5 py-3 mb-8 glass-panel rounded-2xl text-xs text-white/70"
           >
-            <span className="w-2 h2' rounded-full bg-emerald-400"/>
-            <span className="text-xs font-semibold uppercase tracking-widest text-emerald-300">
-            Why Us
+            <span className="inline-block px-4 py-1.5 mb-5 text-xs font-semibold tracking-widest uppercase rounded-full glass-panel text-emerald-300">
+              Why Us
             </span>
           </motion.div>
 
