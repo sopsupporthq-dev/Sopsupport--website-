@@ -84,9 +84,9 @@ const included = [
 ];
 
 const perfectFor = [
-  { icon: Home, label: "New Startup Home Care Agencies" },
   { icon: Heart, label: "Home Health Agencies" },
-  { icon: Star, label: "Hospice Agencies" },
+  { icon: Star, label: "Hospice Providers" },
+  { icon: Home, label: "Home Care Companies" },
 ];
 
 const challenges = [
