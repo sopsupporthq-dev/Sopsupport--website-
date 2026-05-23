@@ -41,7 +41,7 @@ export function FinalCTASection() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.a
-              href="#"
+              href="/contact"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               className="inline-flex items-center justify-center gap-2 h-14 px-10 text-base font-bold rounded-full bg-white text-emerald-900 shadow-[0_0_40px_rgba(255,255,255,0.25)] hover:shadow-[0_0_60px_rgba(255,255,255,0.35)] transition-all duration-300 no-default-hover-elevate"
@@ -51,13 +51,13 @@ export function FinalCTASection() {
               Schedule Free Consultation
             </motion.a>
             <motion.a
-              href="#"
+              href="/faq"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               className="inline-flex items-center justify-center gap-2 h-14 px-10 text-base font-bold rounded-full text-white border-2 border-white/30 bg-white/5 hover:bg-white/10 hover:border-white/50 transition-all duration-300 no-default-hover-elevate"
-              data-testid="link-contact-team"
+              data-testid="link-faq"
             >
-              Contact Our Team
+              View FAQs
               <ArrowRight className="w-5 h-5" />
             </motion.a>
           </div>
