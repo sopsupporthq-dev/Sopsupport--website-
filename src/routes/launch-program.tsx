@@ -85,8 +85,8 @@ const included = [
 
 const perfectFor = [
   { icon: Heart, label: "Home Health Agencies" },
-  { icon: Star, label: "Hospice Providers" },
-  { icon: Home, label: "Home Care Companies" },
+  { icon: Home, label: "Hospice Providers" },
+  { icon: Users, label: "Home Care Companies" },
 ];
 
 const challenges = [
