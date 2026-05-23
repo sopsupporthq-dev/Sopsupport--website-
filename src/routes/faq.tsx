@@ -29,7 +29,7 @@ function FAQPage() {
     <PageShell
       eyebrow="FAQ"
       title={<>Frequently asked <span className="text-gradient">questions</span></>}
-      subtitle="Everything agencies usually ask before partnering with SOP Support."
+      subtitle="Get clear answers to the most common questions agencies ask about working with SOP Support — from onboarding and pricing to communication, deliverables, and scaling support."
     >
       <FAQSection />
       <CTASection title="Still have questions?" cta="Talk to our team" />
