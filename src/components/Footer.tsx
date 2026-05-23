@@ -131,7 +131,7 @@ export function Footer() {
 
             <div className="mt-8">
               <a
-                href="/#contact"
+                href="/contact"
                 className="inline-flex items-center justify-center h-10 px-6 text-sm font-semibold rounded-full text-white bg-gradient-glow no-default-hover-elevate"
                 data-testid="link-footer-cta"
               >
