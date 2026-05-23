@@ -26,7 +26,7 @@ export function SpecializationSection() {
             className="glass-panel rounded-2xl px-8 py-6 border-emerald-500/25 mb-12 max-w-2xl mx-auto"
           >
             <p className="text-2xl lg:text-3xl font-bold text-white leading-snug">
-              We are the preeminent webpage devs.{" "}
+              Professional websites. Trusted Results {" "}
               <span className="text-gradient">We build on credibility.</span>
             </p>
           </motion.div>
