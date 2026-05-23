@@ -3,7 +3,7 @@ import { ArrowRight, Calendar } from "lucide-react";
 
 export function FinalCTASection() {
   return (
-    <section id="contact" className="py-32 relative overflow-hidden" data-testid="section-final-cta">
+    <section id="contact" className="py-20 md:py-32 relative overflow-hidden" data-testid="section-final-cta">
       {/* Rich gradient background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-950 via-teal-950 to-cyan-950" />
@@ -13,7 +13,7 @@ export function FinalCTASection() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDU5LjVoNjBWMHptNTkuNSAwVjBIMHoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+')] opacity-60" />
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
+      <div className="max-w-4xl mx-auto px-5 md:px-6 relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ export function FinalCTASection() {
             </span>
           </div>
 
-          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Your agency deserves a website
             <br />
             <span className="text-gradient">that works harder.</span>
