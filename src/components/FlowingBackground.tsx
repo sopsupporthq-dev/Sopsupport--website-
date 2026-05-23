@@ -1,11 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 
-/**
- * Site-wide flowing background. Fixed behind all content.
- * - Soft moving gradient blobs (CSS keyframes via animated-bg-blob)
- * - SVG wave layers that drift on scroll for a "flowing" feel
- * - Subtle grid overlay
- */
 export function FlowingBackground() {
   const { scrollYProgress } = useScroll();
   const y1 = useTransform(scrollYProgress, [0, 1], ["0%", "-25%"]);
@@ -77,8 +71,13 @@ export function FlowingBackground() {
       </motion.svg>
 
       {/* Fine grid */}
-      <div className="absolute inset-0 opacity-[0.07] bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><path d=%22M0 39.5h40M39.5 0v40%22 stroke=%22white%22 stroke-width=%221%22 fill=%22none%22/></svg>')]" />
-    </div>
+      <div className="absolute inset-0 opacity-[0.07] bg-[url('data:image/svg+xml;utf8,...')]" />
+      
+      {/* Top fade to smooth the grid start */}
+      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-background via-background/80 to-transparent pointer-events-none" />
+      
+      {/* Bottom fade to smooth the grid end */}
+      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none" />
   );
 }
 
