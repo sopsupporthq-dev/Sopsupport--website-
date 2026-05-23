@@ -52,7 +52,7 @@ export function Footer() {
               Websites & Growth Systems for Care Agencies
             </p>
             <p className="text-sm text-white/55 leading-relaxed">
-              SOP Support helps home health, hospice, and home care agencies build modern
+              SOP Support helps home health agencies, hospice providers, and home care companies build modern
               websites and digital growth systems.
             </p>
           </div>
