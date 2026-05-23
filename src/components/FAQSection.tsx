@@ -83,24 +83,6 @@ export function FAQSection() {
   return (
     <section id="faq" className="py-24 relative overflow-hidden" data-testid="section-faq">
       <div className="max-w-3xl mx-auto px-6 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16"
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel border-emerald-500/30 mb-6">
-            <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            <span className="text-xs font-medium text-emerald-300 uppercase tracking-wider">
-              FAQ
-            </span>
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Frequently asked{" "}
-            <span className="text-gradient">questions</span>
-          </h2>
-        </motion.div>
 
         <div className="flex flex-col gap-3">
           {faqs.map((faq, i) => (
