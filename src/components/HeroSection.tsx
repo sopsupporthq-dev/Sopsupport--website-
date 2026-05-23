@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden" data-testid="section-hero">
+    <section className="relative min-h-screen pt-28 md:pt-32 pb-16 md:pb-20 flex items-center overflow-hidden" data-testid="section-hero">
       {/* Background Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="animated-bg-blob bg-emerald-500 w-[500px] h-[500px] top-0 left-[-100px]" />
@@ -12,8 +12,8 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDM5LjVoNDBWMHptMzkuNSAwVjBIMHoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAyKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+')] opacity-50" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-5 md:px-6 relative z-10 w-full">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* Text Content */}
           <motion.div
@@ -28,12 +28,12 @@ export function HeroSection() {
               </span>
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-bold leading-[1.1] mb-6 text-white" data-testid="text-hero-headline">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] mb-6 text-white" data-testid="text-hero-headline">
               The Website & Digital Growth Partner for <br />
               <span className="text-gradient">Home Health, Hospice & Home Care</span> Agencies
             </h1>
 
-            <p className="text-lg lg:text-xl text-white/70 mb-10 leading-relaxed max-w-xl" data-testid="text-hero-subheadline">
+            <p className="text-base md:text-lg lg:text-xl text-white/70 mb-8 md:mb-10 leading-relaxed max-w-xl" data-testid="text-hero-subheadline">
               We are the preeminent digital agency for home care and healthcare providers. We build original websites and also replace outdated ones with modern digital systems designed to build trust, improve local visibility, capture referrals, and support long-term growth.
             </p>
 
