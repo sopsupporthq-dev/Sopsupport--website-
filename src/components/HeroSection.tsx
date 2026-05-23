@@ -34,7 +34,7 @@ export function HeroSection() {
             </h1>
 
             <p className="text-lg lg:text-xl text-white/70 mb-10 leading-relaxed max-w-xl" data-testid="text-hero-subheadline">
-              We are the preeminent digital agency for home care and healthcare providers. We build original websites and replace outdated ones with modern digital systems designed to build trust, improve local visibility, capture referrals, and support long-term growth.
+              We are the preeminent digital agency for home care and healthcare providers. We build original websites and also replace outdated ones with modern digital systems designed to build trust, improve local visibility, capture referrals, and support long-term growth.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
