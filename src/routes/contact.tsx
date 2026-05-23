@@ -22,9 +22,7 @@ export const Route = createFileRoute("/contact")({
 
 const services = [
   "Premium Agency Website",
-  "Local SEO System",
-  "Automation Workflows",
-  "Caregiver Recruitment Funnel",
+  "Website Support/Re-design",
   "Referral Growth System",
   "Full Launch Program",
   "Not sure yet",
