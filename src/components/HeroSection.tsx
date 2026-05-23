@@ -39,7 +39,7 @@ export function HeroSection() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center justify-center h-12 px-8 text-base font-semibold rounded-full text-white bg-gradient-glow group no-default-hover-elevate"
                 data-testid="link-book-audit-primary"
               >
@@ -47,7 +47,7 @@ export function HeroSection() {
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="#services"
+                href="/services"
                 className="inline-flex items-center justify-center h-12 px-8 text-base font-semibold rounded-full text-white bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
                 data-testid="link-explore-services"
               >
