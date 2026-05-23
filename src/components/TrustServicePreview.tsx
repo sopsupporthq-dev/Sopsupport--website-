@@ -31,7 +31,6 @@ export function TrustServicePreview() {
           <p className="text-2xl md:text-4xl font-heading font-semibold text-white leading-tight tracking-tight">
             Professional websites. <span className="text-white/10">Trusted results.</span>
             <br className="hidden md:block" />
-          </br>
             <span className="text-gradient"> We build on credibility.</span>
           </p>
         </ScrollFade>
