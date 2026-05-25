@@ -44,8 +44,8 @@ export function TrustServicePreview() {
             Every piece, engineered for a <span className="text-gradient">specific outcome.</span>
           </h2>
           <p className="mt-4 text-white/60 text-base md:text-lg">
-            Not features for the sake of features — a system where each layer earns trust,
-            calls, caregivers and referrals for your agency.
+            Not just bells and whistles - a system designed to earn trust, generate
+            referrals, drive calls, and support caregivers for your agency.            
           </p>
         </ScrollFade>
 
@@ -77,7 +77,7 @@ const OUTCOMES: Outcome[] = [
   {
     eyebrow: "Inquiries",
     title: "Designed to increase qualified inquiries",
-    body: "Clear messaging, strong CTAs and conversion-focused layouts turn visitors into contacts.",
+    body: "Clear messaging, strong CTAs (Call To Action) and conversion-focused layouts turn visitors into contacts.",
     Icon: MessageSquareText,
     span: "md:col-span-2 md:row-span-1",
     tone: "accent",
