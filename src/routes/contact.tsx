@@ -96,7 +96,7 @@ function ContactPage() {
               </div>
               <div className="flex items-center gap-3 text-sm text-white/80">
                 <Phone className="w-4 h-4 text-emerald-300" />
-                Available by request
+                (469) 902-8031
               </div>
               <div className="flex items-center gap-3 text-sm text-white/80">
                 <MapPin className="w-4 h-4 text-emerald-300" />
@@ -142,7 +142,7 @@ function ContactPage() {
                   </select>
                 </Field>
                 <Field id="current_website" label="Current website">
-                  <Input id="current_website" name="current_website" placeholder="https://" />
+                  <Input id="current_website" name="current_website" placeholder="//" />
                 </Field>
               </div>
               <Field id="message" label="What are you trying to solve?" required>
