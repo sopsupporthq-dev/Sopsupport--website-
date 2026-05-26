@@ -26,7 +26,7 @@ const footerLinks = {
     { label: "FAQ", href: "/faq" },
     { label: "Launch Program", href: "/launch-program" },
     { label: "Contact", href: "/contact" },
-    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Privacy Policy", href: "/privacy_policy" },
   ],
 };
 
