@@ -126,8 +126,10 @@ export function Footer() {
               </li>
               <li>
                 <span className="text-sm text-white/60">
-                  5900 Balcones Dr, Ste 100
-                  Austin, TX 78731
+                 <p> 
+                   5900 Balcones Dr, Ste 100
+                   Austin, TX 78731
+                 </p>
                 </span>
               </li>
             </ul>
