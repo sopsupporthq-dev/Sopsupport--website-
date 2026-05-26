@@ -3,9 +3,18 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import path from "path";
+import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 
 export default defineConfig({
-  plugins: [react(), tailwindcss(), tsconfigPaths()],
+  plugins: [
+  TanStackRouterVite({
+    target: "react",
+    autoCodeSplitting: true,
+  }),
+  react(),
+  tailwindcss(),
+  tsconfigPaths(),
+],
 
   resolve: {
     alias: {
