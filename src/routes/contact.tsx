@@ -23,7 +23,6 @@ export const Route = createFileRoute("/contact")({
 const services = [
   "Premium Agency Website",
   "Website Support/Re-design",
-  "Referral Growth System",
   "Full Launch Program",
   "Not sure yet",
 ];
@@ -46,7 +45,7 @@ function ContactPage() {
     };
 
     if (!payload.name || !payload.email || !payload.message) {
-      toast.error("Please fill in name, email and message.");
+      toast.error("Please fill in name, phone number, email and message.");
       return;
     }
 
@@ -125,7 +124,7 @@ function ContactPage() {
                 <Field id="email" label="Email" required>
                   <Input id="email" name="email" type="email" required placeholder="you@agency.com" />
                 </Field>
-                <Field id="phone" label="Phone">
+                <Field id="phone" label="Phone" required>
                   <Input id="phone" name="phone" type="tel" placeholder="(555) 000-0000" />
                 </Field>
                 <Field id="service_interest" label="Service interested in">
