@@ -150,7 +150,7 @@ export function Footer() {
             © 2026 SOP Support. All rights reserved.
           </p>
           <p className="text-xs text-white/35">
-            Websites & Growth Systems for Home Health, Hospice & Home Care Agencies
+            Websites & Digital Growth Systems for Home Health, Hospice & Home Care Agencies
           </p>
         </div>
       </div>
