@@ -142,7 +142,7 @@ function ContactPage() {
                   </select>
                 </Field>
                 <Field id="current_website" label="Current website">
-                  <Input id="current_website" name="current_website" placeholder="//" />
+                  <Input id="current_website" name="current_website" placeholder="www.youragencyname.com" />
                 </Field>
               </div>
               <Field id="message" label="What are you trying to solve?" required>
