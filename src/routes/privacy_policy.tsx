@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
 
-export const Route = createFileRoute("/privacy-policy")({
+export const Route = createFileRoute("/privacy_policy")({
   head: () => ({
     meta: [
       { title: "Privacy Policy — SOP Support" },
