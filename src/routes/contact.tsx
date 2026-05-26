@@ -56,7 +56,7 @@ function ContactPage() {
 
     if (error) {
       console.error(error);
-      toast.error("Something went wrong. Please email hello@sopsupport.com.");
+      toast.error("Something went wrong. Please email hello@getsopsupport.com.");
       return;
     }
 
