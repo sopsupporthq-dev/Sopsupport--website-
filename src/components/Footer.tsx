@@ -108,20 +108,20 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="mailto:hello@sopsupport.com"
+                  href="mailto:hello@getsopsupport.com"
                   className="text-sm text-white/60 hover:text-emerald-400 transition-colors"
                   data-testid="link-footer-email"
                 >
-                  hello@sopsupport.com
+                  hello@getsopsupport.com
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:5550000000"
+                  href="tel:(469) 902-8031"
                   className="text-sm text-white/60 hover:text-emerald-400 transition-colors"
                   data-testid="link-footer-phone"
                 >
-                  (555) 000-0000
+                  (469) 902-8031
                 </a>
               </li>
               <li>
