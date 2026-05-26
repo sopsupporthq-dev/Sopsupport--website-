@@ -92,7 +92,7 @@ function ContactPage() {
             <div className="mt-10 space-y-5">
               <div className="flex items-center gap-3 text-sm text-white/80">
                 <Mail className="w-4 h-4 text-emerald-300" />
-                hello@sopsupport.com
+                hello@getsopsupport.com
               </div>
               <div className="flex items-center gap-3 text-sm text-white/80">
                 <Phone className="w-4 h-4 text-emerald-300" />
