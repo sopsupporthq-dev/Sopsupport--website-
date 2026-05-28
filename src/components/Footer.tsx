@@ -25,6 +25,7 @@ const footerLinks = {
     { label: "Resources", href: "/resources" },
     { label: "FAQ", href: "/faq" },
     { label: "Launch Program", href: "/launch-program" },
+    { label: "About Us", href: "/about-us" },
     { label: "Contact", href: "/contact" },
     { label: "Privacy Policy", href: "/privacy-policy" },
   ],
