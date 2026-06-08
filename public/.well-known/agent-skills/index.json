@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0",
+  "skills": [
+    {
+      "name": "Agency Information",
+      "type": "documentation",
+      "description": "Information about SOP Support services and process.",
+      "url": "https://getsopsupport.com/about-us",
+      "sha256": "placeholder"
+    }
+  ]
+}
