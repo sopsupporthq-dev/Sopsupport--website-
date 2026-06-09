@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Why Us", to: "/why-us" },
   { label: "Process", to: "/process" },
   { label: "Results", to: "/results" },
+  { label: "Enhancements", to: "/enhancements" },
   { label: "Resources", to: "/resources" },
   { label: "Launch Program", to: "/launch-program" },
   { label: "About Us", to: "/about-us" },
