@@ -33,7 +33,7 @@ export function HeroSection() {
               <span className="text-gradient">Home Health, Hospice & Home Care</span> Agencies
             </h1>
 
-            <p className="text-base md:text-lg lg:text-xl text-white/70 mb-8 md:mb-10 leading-relaxed max-w-3xl" data-testid="text-hero-subheadline">
+            <p className="text-base md:text-lg lg:text-xl text-white mb-8 md:mb-10 leading-relaxed max-w-3xl" data-testid="text-hero-subheadline">
               We are the preeminent digital agency for home care and healthcare providers. We build original websites and also replace outdated ones with modern digital systems designed to build trust, improve local visibility, capture referrals, and support long-term growth.
             </p>
 
@@ -66,7 +66,7 @@ export function HeroSection() {
             <motion.div
               animate={{ y: [-10, 10, -10] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="w-full max-w-2xl" glass-panel rounded-2xl p-6 shadow-2xl shadow-emerald-900/20 border-white/10"
+              className="w-full max-w-2xl glass-panel rounded-2xl p-6 shadow-2xl shadow-emerald-900/20 border-white/10"
               data-testid="hero-dashboard-visual"
             >
               <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/10">
