@@ -21,7 +21,7 @@ export function PageShell({
       <div className="absolute top-96 -right-32 w-[40rem] h-[40rem] rounded-full bg-cyan-500/20 blur-[120px] animated-bg-blob animation-delay-2000" />
 
       <main className="relative px-6 sm:px-8 lg:px-12 xl:px-16 py-24 lg:py-32">
-        <div className="max-w-[1400px] mx-auto">
+        <div className="max-w-[1600px] mx-auto w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -33,7 +33,7 @@ export function PageShell({
                 {eyebrow}
               </span>
             )}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight">
+            <h1 className="text-[clamp(3rem,6vw,7rem)] font-bold tracking-tight">
               {title}
             </h1>
             {subtitle && (
