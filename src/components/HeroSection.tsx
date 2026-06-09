@@ -12,8 +12,8 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDM5LjVoNDBWMHptMzkuNSAwVjBIMHoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAyKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+')] opacity-50" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-5 md:px-6 relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-12 xl:px-20 relative z-10 w-full">
+        <div className="grid lg:grid-cols-[1.25fr_0.75fr] gap-12 xl:gap-20 items-center">
 
           {/* Text Content */}
           <motion.div
@@ -28,12 +28,12 @@ export function HeroSection() {
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] mb-6 text-white" data-testid="text-hero-headline">
+            <h1 className="text-[clamp(3rem,6vw,6.5rem)] font-bold leading-[1.05] mb-6 text-white" data-testid="text-hero-headline">
               The Website & Digital Growth Partner for <br />
               <span className="text-gradient">Home Health, Hospice & Home Care</span> Agencies
             </h1>
 
-            <p className="text-base md:text-lg lg:text-xl text-white/70 mb-8 md:mb-10 leading-relaxed max-w-xl" data-testid="text-hero-subheadline">
+            <p className="text-base md:text-lg lg:text-xl text-white/70 mb-8 md:mb-10 leading-relaxed max-w-3xl" data-testid="text-hero-subheadline">
               We are the preeminent digital agency for home care and healthcare providers. We build original websites and also replace outdated ones with modern digital systems designed to build trust, improve local visibility, capture referrals, and support long-term growth.
             </p>
 
@@ -66,7 +66,7 @@ export function HeroSection() {
             <motion.div
               animate={{ y: [-10, 10, -10] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="w-full max-w-md glass-panel rounded-2xl p-6 shadow-2xl shadow-emerald-900/20 border-white/10"
+              className="w-full max-w-2xl" glass-panel rounded-2xl p-6 shadow-2xl shadow-emerald-900/20 border-white/10"
               data-testid="hero-dashboard-visual"
             >
               <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/10">
