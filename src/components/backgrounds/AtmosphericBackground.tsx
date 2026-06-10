@@ -11,13 +11,52 @@ const VARIANTS = {
   // Home page — rich atmospheric, many elements
   home: {
     glows: [
-      { pos: { top:"-180px",  right:"-80px"  }, w:600, h:600, color:"rgba(0,180,80,0.13)",  blur:80,  duration:10, depth:0.07 },
-      { pos: { top:"35vh",    left:"-100px"  }, w:420, h:420, color:"rgba(0,160,70,0.10)",  blur:60,  duration:13, depth:0.13 },
-      { pos: { top:"70vh",    left:"25%"     }, w:700, h:280, color:"rgba(0,200,90,0.10)",  blur:70,  duration:15, depth:0.05 },
-      { pos: { top:"120vh",   right:"4%"     }, w:260, h:260, color:"rgba(0,220,100,0.08)", blur:45,  duration:9,  depth:0.17 },
-      { pos: { top:"160vh",   left:"-80px"   }, w:500, h:500, color:"rgba(0,170,75,0.09)",  blur:65,  duration:12, depth:0.08 },
-      { pos: { top:"220vh",   right:"-60px"  }, w:400, h:400, color:"rgba(0,190,85,0.10)",  blur:55,  duration:11, depth:0.11 },
-      { pos: { bottom:"0px",  left:"20%"     }, w:600, h:220, color:"rgba(0,200,90,0.09)",  blur:70,  duration:14, depth:0.06 },
+      {
+        pos: { top:"-250px", right:"-180px" },
+        w:700,
+        h:700,
+        color:"rgba(0,180,80,0.10)",     // Emerald
+        blur:140,
+        duration:18,
+        depth:0.04,
+      },
+      {
+        pos: { top:"30vh", left:"-200px" },
+        w:600,
+        h:600,
+        color:"rgba(0,120,255,0.06)",    // Deep blue
+        blur:120,
+        duration:22,
+        depth:0.07,
+              },
+      {
+        pos: { top:"75vh", left:"20%" },
+        w:800,
+        h:400,
+        color:"rgba(0,220,120,0.06)",    // Bright emerald
+        blur:120,
+        duration:25,
+        depth:0.03,
+      },
+      {
+        pos: { top:"140vh", right:"-100px" },
+        w:500,
+        h:500,
+        color:"rgba(0,120,220,0.05)",    // Secondary blue
+        blur:100,
+        duration:20,
+        depth:0.05,
+      },
+      {
+        pos: { bottom:"0px", left:"10%" },
+        w:700,
+        h:300,
+        color:"rgba(0,190,90,0.06)",     // Green anchor
+        blur:110,
+        duration:16,
+        depth:0.04,
+      },
+    
     ],
     squares: [
       { top:"7vh",   left:"2.5%", size:58, rot:12,  opacity:0.06, duration:11, depth:0.12 },
