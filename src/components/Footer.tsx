@@ -1,6 +1,38 @@
 import { motion } from "framer-motion";
 import { Activity } from "lucide-react";
 
+const footerLinks = {
+  services: [
+    "Website Design",
+    "SEO & Local Visibility",
+    "Referral Systems",
+    "Website Support",
+  ],
+
+  industries: [
+    "Home Health Agencies",
+    "Hospice Providers",
+    "Senior Care Companies",
+    "Long-Term Care & Home-Based Care Providers",
+    "Revenue Cycle & Billing Vendors",
+    "Clinical Documentation & QA Firms",
+  ],
+
+  quickLinks: [
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "Why Us", href: "/why-us" },
+    { label: "Process", href: "/process" },
+    { label: "Results", href: "/results" },
+    { label: "Resources", href: "/resources" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Launch Program", href: "/launch-program" },
+    { label: "About Us", href: "/about-us" },
+    { label: "Contact", href: "/contact" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+  ],
+};
+
 export function Footer() {
   return (
     <footer
