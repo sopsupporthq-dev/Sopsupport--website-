@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ReactNode } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { AtmosphericBackground } from "@/components/backgrounds/AtmosphericBackground";
 
 export function PageShell({
   eyebrow,
@@ -15,12 +16,12 @@ export function PageShell({
   children: ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
-      <Header />
-      <div className="absolute top-32 -left-32 w-[40rem] h-[40rem] rounded-full bg-emerald-500/20 blur-[120px] animated-bg-blob" />
-      <div className="absolute top-96 -right-32 w-[40rem] h-[40rem] rounded-full bg-cyan-500/20 blur-[120px] animated-bg-blob animation-delay-2000" />
+    <div className="min-h-screen bg-background text-foreground relative">
+      {/* Single fixed background — covers the entire page seamlessly */}
+      <AtmosphericBackground variant="default" />
 
-      <main className="relative px-6 sm:px-8 lg:px-12 xl:px-16 py-24 lg:py-32">
+      <Header />
+      <main className="relative z-10 px-6 sm:px-8 lg:px-12 xl:px-16 py-24 lg:py-32">
         <div className="max-w-[1600px] mx-auto w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
