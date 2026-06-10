@@ -237,7 +237,14 @@ function AtmosphericBackground() {
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen pt-28 md:pt-32 pb-16 md:pb-20 flex items-center overflow-hidden" data-testid="section-hero">
+    <section
+    className="relative min-h-screen pt-28 md:pt-32 pb-16 md:pb-20 flex items-center overflow-hidden"
+    data-testid="section-hero"
+    style={{
+    background:
+    "linear-gradient(180deg,#020617 0%,#041b17 45%,#020617 100%)",
+    }}
+    >
 
       {/* ── Atmospheric Background (replaces old orbs + grid) ── */}
       <AtmosphericBackground />
