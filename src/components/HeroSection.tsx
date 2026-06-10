@@ -1,16 +1,198 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+
+// Atmospheric background elements — each has a float animation duration and parallax depth
+const GLOWS = [
+  { cls: "w-[600px] h-[600px] top-[-180px] right-[-80px]",  color: "rgba(0,180,80,0.13)",  blur: 80, duration: 10, depth: 0.07 },
+  { cls: "w-[420px] h-[420px] top-[35%]   left-[-100px]",   color: "rgba(0,160,70,0.10)",  blur: 60, duration: 13, depth: 0.13 },
+  { cls: "w-[700px] h-[280px] bottom-[-100px] left-[25%]",  color: "rgba(0,200,90,0.10)",  blur: 70, duration: 15, depth: 0.05 },
+  { cls: "w-[260px] h-[260px] bottom-[18%] right-[4%]",     color: "rgba(0,220,100,0.08)", blur: 45, duration: 9,  depth: 0.17 },
+];
+
+const SQUARES = [
+  { top:"7%",   left:"2.5%",  size:58,  rot:12,  opacity:0.06, duration:11, depth:0.12 },
+  { top:"4%",   left:"17%",   size:32,  rot:-8,  opacity:0.04, duration:14, depth:0.22 },
+  { top:"2%",   right:"21%",  size:76,  rot:20,  opacity:0.05, duration:12, depth:0.09 },
+  { top:"11%",  right:"7%",   size:22,  rot:5,   opacity:0.07, duration:7,  depth:0.25 },
+  { top:"27%",  left:"6%",    size:48,  rot:-15, opacity:0.04, duration:16, depth:0.15 },
+  { top:"21%",  left:"42%",   size:16,  rot:30,  opacity:0.08, duration:9,  depth:0.20 },
+  { top:"44%",  right:"2.5%", size:42,  rot:-22, opacity:0.05, duration:12, depth:0.11 },
+  { top:"54%",  left:"11%",   size:26,  rot:18,  opacity:0.05, duration:13, depth:0.19 },
+  { top:"61%",  right:"17%",  size:62,  rot:-10, opacity:0.04, duration:10, depth:0.08 },
+  { top:"71%",  left:"47%",   size:18,  rot:40,  opacity:0.06, duration:8,  depth:0.24 },
+  { top:"79%",  left:"5%",    size:36,  rot:-5,  opacity:0.04, duration:17, depth:0.13 },
+  { top:"77%",  right:"7%",   size:50,  rot:16,  opacity:0.05, duration:11, depth:0.17 },
+];
+
+const DOTS = [
+  { top:"6%",  left:"24%" }, { top:"9%",  left:"54%" }, { top:"14%", right:"29%" },
+  { top:"30%", left:"21%" }, { top:"41%", right:"11%" }, { top:"57%", left:"32%" },
+  { top:"66%", right:"24%" }, { top:"75%", left:"59%" }, { top:"87%", right:"39%" },
+];
+
+const CROSSES = [
+  { top:"7%",  right:"34%" }, { top:"18%", left:"51%" },
+  { top:"47%", left:"5%"   }, { top:"68%", right:"5%" },
+];
+
+function AtmosphericBackground() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const elementsRef  = useRef<HTMLElement[]>([]);
+  const rafRef       = useRef<number>(0);
+  const scrollYRef   = useRef(0);
+  const targetYRef   = useRef(0);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    // Collect all parallax elements
+    elementsRef.current = Array.from(
+      container.querySelectorAll<HTMLElement>("[data-depth]")
+    );
+
+    const onScroll = () => {
+      targetYRef.current = window.scrollY;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    const tick = () => {
+      scrollYRef.current += (targetYRef.current - scrollYRef.current) * 0.07;
+      elementsRef.current.forEach((el) => {
+        const depth  = parseFloat(el.dataset.depth ?? "0");
+        const offset = -(scrollYRef.current * depth);
+        // Preserve the element's own CSS transform (rotate) via a CSS variable
+        el.style.setProperty("--px-offset", `${offset}px`);
+      });
+      rafRef.current = requestAnimationFrame(tick);
+    };
+    rafRef.current = requestAnimationFrame(tick);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      className="absolute inset-0 overflow-hidden pointer-events-none"
+      aria-hidden="true"
+    >
+      {/* Radial glows */}
+      {GLOWS.map((g, i) => (
+        <div
+          key={i}
+          data-depth={g.depth}
+          className={`absolute rounded-full ${g.cls}`}
+          style={{
+            background: `radial-gradient(circle, ${g.color} 0%, transparent 70%)`,
+            filter: `blur(${g.blur}px)`,
+            animation: `heroFloat${(i % 4) + 1} ${g.duration}s ease-in-out infinite`,
+            transform: "translateY(var(--px-offset, 0px))",
+          }}
+        />
+      ))}
+
+      {/* Scattered squares */}
+      {SQUARES.map((s, i) => (
+        <div
+          key={i}
+          data-depth={s.depth}
+          className="absolute"
+          style={{
+            top:    s.top    ?? undefined,
+            left:   s.left   ?? undefined,
+            right:  (s as any).right ?? undefined,
+            width:  s.size,
+            height: s.size,
+            borderRadius: 6,
+            background: `rgba(0,200,90,${s.opacity})`,
+            border: `1px solid rgba(0,220,100,${s.opacity + 0.04})`,
+            animation: `heroSq${(i % 6) + 1} ${s.duration}s ease-in-out infinite`,
+            transform: `rotate(${s.rot}deg) translateY(var(--px-offset, 0px))`,
+          }}
+        />
+      ))}
+
+      {/* Star dots */}
+      {DOTS.map((d, i) => (
+        <div
+          key={i}
+          data-depth={0.10 + (i % 5) * 0.03}
+          className="absolute w-[2px] h-[2px] rounded-full"
+          style={{
+            top:   d.top   ?? undefined,
+            left:  d.left  ?? undefined,
+            right: (d as any).right ?? undefined,
+            background: "rgba(180,255,200,0.35)",
+            transform: "translateY(var(--px-offset, 0px))",
+          }}
+        />
+      ))}
+
+      {/* Crosshair accents */}
+      {CROSSES.map((c, i) => (
+        <div
+          key={i}
+          data-depth={0.14 + (i % 3) * 0.04}
+          className="absolute"
+          style={{
+            top:   c.top   ?? undefined,
+            right: (c as any).right ?? undefined,
+            left:  (c as any).left  ?? undefined,
+            width: 12,
+            height: 12,
+            transform: "translateY(var(--px-offset, 0px))",
+          }}
+        >
+          <span className="absolute top-[5px] left-0 w-[12px] h-[1px] bg-emerald-500/20" />
+          <span className="absolute top-0 left-[5px] w-[1px] h-[12px] bg-emerald-500/20" />
+        </div>
+      ))}
+
+      {/* Keyframe styles */}
+      <style>{`
+        @keyframes heroFloat1 {
+          0%,100% { translate: 0px 0px; }
+          33%      { translate: -16px 20px; }
+          66%      { translate: 12px -12px; }
+        }
+        @keyframes heroFloat2 {
+          0%,100% { translate: 0px 0px; }
+          40%      { translate: 20px -16px; }
+          70%      { translate: -10px 14px; }
+        }
+        @keyframes heroFloat3 {
+          0%,100% { translate: 0px 0px; }
+          50%      { translate: 18px 10px; }
+        }
+        @keyframes heroFloat4 {
+          0%,100% { translate: 0px 0px; }
+          45%      { translate: -14px -18px; }
+          80%      { translate: 10px 10px; }
+        }
+        @keyframes heroSq1 { 0%,100%{translate:0 0} 50%{translate:-8px 10px}  }
+        @keyframes heroSq2 { 0%,100%{translate:0 0} 50%{translate:10px -8px}  }
+        @keyframes heroSq3 { 0%,100%{translate:0 0} 50%{translate:-10px 6px}  }
+        @keyframes heroSq4 { 0%,100%{translate:0 0} 50%{translate:8px 10px}   }
+        @keyframes heroSq5 { 0%,100%{translate:0 0} 50%{translate:6px -10px}  }
+        @keyframes heroSq6 { 0%,100%{translate:0 0} 50%{translate:-6px 8px}   }
+      `}</style>
+    </div>
+  );
+}
 
 export function HeroSection() {
   return (
     <section className="relative min-h-screen pt-28 md:pt-32 pb-16 md:pb-20 flex items-center overflow-hidden" data-testid="section-hero">
-      {/* Background Orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="animated-bg-blob bg-emerald-500 w-[500px] h-[500px] top-0 left-[-100px]" />
-        <div className="animated-bg-blob bg-cyan-500 w-[400px] h-[400px] top-[20%] right-[-100px] animation-delay-2000" />
-        <div className="animated-bg-blob bg-teal-600 w-[600px] h-[600px] bottom-[-200px] left-[20%] animation-delay-4000 opacity-20" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDM5LjVoNDBWMHptMzkuNSAwVjBIMHoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAyKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+')] opacity-50" />
-      </div>
+
+      {/* ── Atmospheric Background (replaces old orbs + grid) ── */}
+      <AtmosphericBackground />
 
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 xl:px-20 relative z-10 w-full">
         <div className="grid lg:grid-cols-[1.25fr_0.75fr] gap-12 xl:gap-20 items-center">
@@ -80,13 +262,13 @@ export function HeroSection() {
 
               <div className="space-y-4">
                 {[
-                  { label: "Website Design", status: "Live", color: "bg-emerald-500", text: "text-emerald-400", pulse: false },
-                  { label: "Professional Branding", status: "Polished", color: "bg-emerald-400", text: "text-emerald-300", pulse: false },
-                  { label: "Mobile Responsive", status: "Optimized", color: "bg-teal-400", text: "text-teal-300", pulse: false },
-                  { label: "SEO Visibility", status: "Improving", color: "bg-cyan-500", text: "text-cyan-400", pulse: true },
-                  { label: "Referral System", status: "Active", color: "bg-emerald-400", text: "text-emerald-300", pulse: true },
-                  { label: "Web & Digital Services", status: "Running", color: "bg-cyan-400", text: "text-cyan-300", pulse: false },
-                  { label: "Fast and Secure Hosting", status: "Online", color: "bg-emerald-500", text: "text-emerald-400", pulse: true },
+                  { label: "Website Design",        status: "Live",      color: "bg-emerald-500", text: "text-emerald-400", pulse: false },
+                  { label: "Professional Branding",  status: "Polished",  color: "bg-emerald-400", text: "text-emerald-300", pulse: false },
+                  { label: "Mobile Responsive",      status: "Optimized", color: "bg-teal-400",    text: "text-teal-300",    pulse: false },
+                  { label: "SEO Visibility",         status: "Improving", color: "bg-cyan-500",    text: "text-cyan-400",    pulse: true  },
+                  { label: "Referral System",        status: "Active",    color: "bg-emerald-400", text: "text-emerald-300", pulse: true  },
+                  { label: "Web & Digital Services", status: "Running",   color: "bg-cyan-400",    text: "text-cyan-300",    pulse: false },
+                  { label: "Fast and Secure Hosting",status: "Online",    color: "bg-emerald-500", text: "text-emerald-400", pulse: true  },
                 ].map((row, i) => (
                   <motion.div
                     key={row.label}
@@ -100,9 +282,9 @@ export function HeroSection() {
                       <span className={`text-xs font-semibold ${row.text}`}>{row.status}</span>
                       <div className="relative flex h-2.5 w-2.5">
                         {row.pulse && (
-                          <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${row.color} opacity-75`}></span>
+                          <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${row.color} opacity-75`} />
                         )}
-                        <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${row.color}`}></span>
+                        <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${row.color}`} />
                       </div>
                     </div>
                   </motion.div>
