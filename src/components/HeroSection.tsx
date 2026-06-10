@@ -6,31 +6,74 @@ import { ArrowRight } from "lucide-react";
 
 // Atmospheric background elements — each has a float animation duration and parallax depth
 const GLOWS = [
-  { cls: "w-[600px] h-[600px] top-[-180px] right-[-80px]",  color: "rgba(0,180,80,0.13)",  blur: 80, duration: 10, depth: 0.07 },
-  { cls: "w-[420px] h-[420px] top-[35%]   left-[-100px]",   color: "rgba(0,160,70,0.10)",  blur: 60, duration: 13, depth: 0.13 },
-  { cls: "w-[700px] h-[280px] bottom-[-100px] left-[25%]",  color: "rgba(0,200,90,0.10)",  blur: 70, duration: 15, depth: 0.05 },
-  { cls: "w-[260px] h-[260px] bottom-[18%] right-[4%]",     color: "rgba(0,220,100,0.08)", blur: 45, duration: 9,  depth: 0.17 },
+  {
+    cls: "w-[900px] h-[900px] top-[-350px] right-[-250px]",
+    color: "rgba(16,185,129,0.08)",
+    blur: 140,
+    duration: 18,
+    depth: 0.04,
+  },
+  {
+    cls: "w-[700px] h-[700px] top-[25%] left-[-250px]",
+    color: "rgba(6,182,212,0.06)",
+    blur: 120,
+    duration: 22,
+    depth: 0.07,
+  },
+  {
+    cls: "w-[900px] h-[500px] bottom-[-250px] left-[20%]",
+    color: "rgba(34,197,94,0.05)",
+    blur: 120,
+    duration: 25,
+    depth: 0.03,
+  },
 ];
 
 const SQUARES = [
-  { top:"7%",   left:"2.5%",  size:58,  rot:12,  opacity:0.06, duration:11, depth:0.12 },
-  { top:"4%",   left:"17%",   size:32,  rot:-8,  opacity:0.04, duration:14, depth:0.22 },
-  { top:"2%",   right:"21%",  size:76,  rot:20,  opacity:0.05, duration:12, depth:0.09 },
-  { top:"11%",  right:"7%",   size:22,  rot:5,   opacity:0.07, duration:7,  depth:0.25 },
-  { top:"27%",  left:"6%",    size:48,  rot:-15, opacity:0.04, duration:16, depth:0.15 },
-  { top:"21%",  left:"42%",   size:16,  rot:30,  opacity:0.08, duration:9,  depth:0.20 },
-  { top:"44%",  right:"2.5%", size:42,  rot:-22, opacity:0.05, duration:12, depth:0.11 },
-  { top:"54%",  left:"11%",   size:26,  rot:18,  opacity:0.05, duration:13, depth:0.19 },
-  { top:"61%",  right:"17%",  size:62,  rot:-10, opacity:0.04, duration:10, depth:0.08 },
-  { top:"71%",  left:"47%",   size:18,  rot:40,  opacity:0.06, duration:8,  depth:0.24 },
-  { top:"79%",  left:"5%",    size:36,  rot:-5,  opacity:0.04, duration:17, depth:0.13 },
-  { top:"77%",  right:"7%",   size:50,  rot:16,  opacity:0.05, duration:11, depth:0.17 },
+  {
+    top: "10%",
+    left: "6%",
+    size: 42,
+    rot: 12,
+    opacity: 0.04,
+    duration: 14,
+    depth: 0.12,
+  },
+  {
+    top: "20%",
+    right: "8%",
+    size: 28,
+    rot: -8,
+    opacity: 0.03,
+    duration: 18,
+    depth: 0.18,
+  },
+  {
+    top: "58%",
+    left: "12%",
+    size: 34,
+    rot: 15,
+    opacity: 0.03,
+    duration: 16,
+    depth: 0.10,
+  },
+  {
+    top: "72%",
+    right: "14%",
+    size: 46,
+    rot: -12,
+    opacity: 0.03,
+    duration: 20,
+    depth: 0.14,
+  },
 ];
 
 const DOTS = [
-  { top:"6%",  left:"24%" }, { top:"9%",  left:"54%" }, { top:"14%", right:"29%" },
-  { top:"30%", left:"21%" }, { top:"41%", right:"11%" }, { top:"57%", left:"32%" },
-  { top:"66%", right:"24%" }, { top:"75%", left:"59%" }, { top:"87%", right:"39%" },
+  { top: "12%", left: "22%" },
+  { top: "24%", right: "18%" },
+  { top: "42%", left: "15%" },
+  { top: "64%", right: "22%" },
+  { top: "82%", left: "55%" },
 ];
 
 const CROSSES = [
@@ -79,10 +122,15 @@ function AtmosphericBackground() {
 
   return (
     <div
-      ref={containerRef}
-      className="absolute inset-0 overflow-hidden pointer-events-none"
-      aria-hidden="true"
-    >
+      className="absolute inset-0 opacity-[0.025]"
+      style={{
+        backgroundImage: `
+        linear-gradient(rgba(255,255,255,.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.15) 1px, transparent 1px)
+        ,
+        backgroundSize: "80px 80px",
+        }}
+        />
       {/* Radial glows */}
       {GLOWS.map((g, i) => (
         <div
