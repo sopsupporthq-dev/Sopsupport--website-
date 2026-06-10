@@ -39,6 +39,15 @@ const VARIANTS = {
         depth:0.03,
       },
       {
+        pos: { top:"105vh", left:"40%" },
+        w:900,
+        h:900,
+        color:"rgba(0,120,255,0.05)",
+        blur:280,
+        duration:24,
+        depth:0.04,
+      },      
+      {
         pos: { top:"140vh", right:"-100px" },
         w:500,
         h:500,
@@ -95,11 +104,11 @@ const VARIANTS = {
   // Interior/shell pages — calmer, fewer elements
   default: {
     glows: [
-      { pos: { top:"-250px",  right:"-180px" }, w:700, h:700, color:"rgba(16,185,129,0.08)", blur:140, duration:18, depth:0.04 },
-      { pos: { top:"30vh",    left:"-200px"  }, w:600, h:600, color:"rgba(6,182,212,0.06)",  blur:120, duration:22, depth:0.07 },
-      { pos: { top:"75vh",    left:"20%"     }, w:800, h:400, color:"rgba(34,197,94,0.05)",  blur:120, duration:25, depth:0.03 },
-      { pos: { top:"140vh",   right:"-100px" }, w:500, h:500, color:"rgba(0,180,80,0.06)",   blur:100, duration:20, depth:0.05 },
-      { pos: { bottom:"0px",  left:"10%"     }, w:700, h:300, color:"rgba(0,200,90,0.05)",   blur:110, duration:16, depth:0.04 },
+      { pos: { top:"-250px",  right:"-180px" }, w:700, h:700, color:"rgba(16,185,129,0.08)", blur:260, duration:18, depth:0.04 },
+      { pos: { top:"30vh",    left:"-200px"  }, w:600, h:600, color:"rgba(0,120,255,0.06)",  blur:240, duration:22, depth:0.07 },
+      { pos: { top:"75vh",    left:"20%" }, w:800, h:400, color:"rgba(34,197,94,0.05)",  blur:260, duration:25, depth:0.03 },
+      { pos: { top:"140vh",   right:"-100px" }, w:500, h:500, color:"rgba(0,180,80,0.06)",  blur:220, duration:20, depth:0.05 },
+      { pos: { bottom:"0px",  left:"10%" }, w:700, h:300, color:"rgba(0,200,90,0.05)",   blur:240, duration:16, depth:0.04 },
     ],
     squares: [
       { top:"10vh",  left:"6%",   size:42, rot:12,  opacity:0.04, duration:14, depth:0.12 },
