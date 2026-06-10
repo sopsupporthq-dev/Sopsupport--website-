@@ -65,13 +65,12 @@ function WhyUsPage() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex flex-col items-center gap-1 px-5 py-3 mb-8 glass-panel rounded-2xl text-xs text-white/70"
-          >
-            <span className="inline-block px-4 py-1.5 mb-5 text-xs font-semibold tracking-widest uppercase rounded-full glass-panel text-emerald-300">
+            className="mb-8"
+            >
+            <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest uppercase rounded-full glass-panel text-emerald-300">
               Why Us
             </span>
           </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
