@@ -54,7 +54,7 @@ function ContactPage() {
     setSubmitting(true);
     setResult("Sending...");
 
-    formData.append("access_key", "32064216-7496-497c-a4b7-42b5f208e7ce");
+    formData.append("access_key", "Add after download");
     formData.append("subject", "New SOP Support Website Inquiry");
     formData.append("from_name", "SOP Support Website");
 
