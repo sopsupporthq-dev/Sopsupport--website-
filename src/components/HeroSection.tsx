@@ -120,32 +120,38 @@ function AtmosphericBackground() {
     };
   }, []);
 
-  return (
+return (
+  <div
+    ref={containerRef}
+    className="absolute inset-0 overflow-hidden pointer-events-none"
+    aria-hidden="true"
+    >
     <div
       className="absolute inset-0 opacity-[0.025]"
       style={{
         backgroundImage: `
         linear-gradient(rgba(255,255,255,.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.15) 1px, transparent 1px)
-        ,
+        linear-gradient(90deg, rgba(255,255,255,.15) 1px, transparent 1px)`,
         backgroundSize: "80px 80px",
+      }}
+      />
+
+    {/* Radial glows */}
+    {GLOWS.map((g, i) => (
+      <div
+        key={i}
+        data-depth={g.depth}
+        className={`absolute rounded-full ${g.cls}`}
+        style={{
+          background: `radial-gradient(circle, ${g.color} 0%, transparent 70%)`,
+          filter: `blur(${g.blur}px)`,
+          animation: `heroFloat${(i % 4) + 1} ${g.duration}s ease-in-out infinite`,
+          transform: "translateY(var(--px-offset, 0px))",
         }}
         />
-      {/* Radial glows */}
-      {GLOWS.map((g, i) => (
-        <div
-          key={i}
-          data-depth={g.depth}
-          className={`absolute rounded-full ${g.cls}`}
-          style={{
-            background: `radial-gradient(circle, ${g.color} 0%, transparent 70%)`,
-            filter: `blur(${g.blur}px)`,
-            animation: `heroFloat${(i % 4) + 1} ${g.duration}s ease-in-out infinite`,
-            transform: "translateY(var(--px-offset, 0px))",
-          }}
-        />
-      ))}
-
+    ))
+    }
+    
       {/* Scattered squares */}
       {SQUARES.map((s, i) => (
         <div
