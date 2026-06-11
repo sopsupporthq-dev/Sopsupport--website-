@@ -20,6 +20,8 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { AtmosphericBackground } from "@/components/backgrounds/AtmosphericBackground";
+
 
 export const Route = createFileRoute("/launch-program")({
   head: () => ({
@@ -112,6 +114,7 @@ export default function LaunchProgram() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
+      <AtmosphericBackground variant="default" />
 
       <main>
         <section
