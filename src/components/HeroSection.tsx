@@ -7,7 +7,7 @@ import { AtmosphericBackground } from "@/components/backgrounds/AtmosphericBackg
 export function HeroSection() {
   return (
     <section
-      className="relative min-h-[100vh] pt-24 md:pt-28 pb-8 md:pb-12 flex items-center overflow-hidden"
+      className="relative min-h-[80vh] pt-24 md:pt-28 pb-8 md:pb-12 flex items-center overflow-hidden"
       data-testid="section-hero"
       >
       {/* Full-page fixed atmospheric background */}
