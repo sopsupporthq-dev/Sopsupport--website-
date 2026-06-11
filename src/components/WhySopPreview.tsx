@@ -29,7 +29,7 @@ const proof = [
 
 export function WhySopPreview() {
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden">
+    <section className="relative py-20 md:py-28">
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 left-[-100px] w-[500px] h-[500px] rounded-full bg-teal-500/15 blur-[140px]" />
       </div>
