@@ -5,6 +5,8 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { AtmosphericBackground } from "@/components/backgrounds/AtmosphericBackground";
+
 
 export const Route = createFileRoute("/why-us")({
   head: () => ({
@@ -53,10 +55,9 @@ const reasons = [
 
 function WhyUsPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+    <div className="min-h-screen bg-background text-foreground relative">
       <Header />
-      <div className="absolute top-32 -left-32 w-[40rem] h-[40rem] rounded-full bg-emerald-500/20 blur-[120px] animated-bg-blob" />
-      <div className="absolute top-[40rem] -right-32 w-[40rem] h-[40rem] rounded-full bg-cyan-500/20 blur-[120px] animated-bg-blob animation-delay-2000" />
+      <AtmosphericBackground variant="default" />
 
       <main className="relative pt-32 pb-24 px-6">
         {/* Hero */}
