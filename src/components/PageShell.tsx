@@ -17,28 +17,29 @@ export function PageShell({
 }) {
   return (
     <div className="min-h-screen bg-background text-foreground relative">
-      {/* Single fixed background — covers the entire page seamlessly */}
+      {/* Single fixed background — covers entire page seamlessly */}
       <AtmosphericBackground variant="default" />
 
       <Header />
-      <main className="relative z-10 px-6 sm:px-8 lg:px-12 xl:px-16 py-24 lg:py-32">
-        <div className="max-w-[1600px] mx-auto w-full">
+
+      <main className="relative z-10 px-5 sm:px-8 lg:px-12 py-20 lg:py-28">
+        <div className="max-w-[1280px] mx-auto w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-14"
           >
             {eyebrow && (
               <span className="inline-block px-4 py-1.5 mb-5 text-xs font-semibold tracking-widest uppercase rounded-full glass-panel text-emerald-300">
                 {eyebrow}
               </span>
             )}
-            <h1 className="text-[clamp(3rem,6vw,7rem)] font-bold tracking-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight">
               {title}
             </h1>
             {subtitle && (
-              <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                 {subtitle}
               </p>
             )}
@@ -46,6 +47,7 @@ export function PageShell({
           {children}
         </div>
       </main>
+
       <Footer />
     </div>
   );
@@ -63,17 +65,17 @@ export function CTASection({
   cta?: string;
 }) {
   return (
-    <section className="mt-24">
-      <div className="glass-panel rounded-3xl p-10 md:p-16 text-center relative overflow-hidden">
+    <section className="mt-20">
+      <div className="glass-panel rounded-3xl p-8 md:p-14 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-cyan-500/10" />
         <div className="relative">
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="text-2xl md:text-3xl font-bold">
             <span className="text-gradient">{title}</span>
           </h2>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">{body}</p>
+          <p className="mt-4 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">{body}</p>
           <a
             href={href}
-            className="inline-flex items-center justify-center mt-8 h-12 px-8 text-sm font-semibold rounded-full text-white bg-gradient-glow tracking-wide"
+            className="inline-flex items-center justify-center mt-7 h-11 px-7 text-sm font-semibold rounded-full text-white bg-gradient-glow tracking-wide"
           >
             {cta}
           </a>
