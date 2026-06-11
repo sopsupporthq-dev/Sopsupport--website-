@@ -3,15 +3,12 @@ import { ArrowRight, Calendar } from "lucide-react";
 
 export function FinalCTASection() {
   return (
-    <section id="contact" className="py-20 md:py-32 relative overflow-hidden" data-testid="section-final-cta">
-      {/* Rich gradient background */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-950 via-teal-950 to-cyan-950" />
-        <div className="animated-bg-blob bg-emerald-500 w-[600px] h-[600px] top-[-200px] left-[10%] opacity-25" />
-        <div className="animated-bg-blob bg-cyan-500 w-[500px] h-[500px] bottom-[-200px] right-[5%] opacity-20 animation-delay-2000" />
-        {/* Grid overlay */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDU5LjVoNjBWMHptNTkuNSAwVjBIMHoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+')] opacity-60" />
-      </div>
+    <section
+      id="contact"
+      className="py-20 md:py-32 relative"
+      data-testid="section-final-cta"
+    >
+      {/* No background here — the fixed AtmosphericBackground shows through */}
 
       <div className="max-w-4xl mx-auto px-5 md:px-6 relative z-10 text-center">
         <motion.div
@@ -20,7 +17,6 @@ export function FinalCTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 mb-8">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span className="text-xs font-medium text-white/80 uppercase tracking-wider">
