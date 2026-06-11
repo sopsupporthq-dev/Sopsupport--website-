@@ -26,11 +26,6 @@ export function TrustServicePreview() {
       <div className="max-w-7xl mx-auto px-5 md:px-6 relative z-10">
         {/* Tagline replacing the trust strip */}
         <ScrollFade className="text-center mb-20 md:mb-24" travel={30}>
-          <p className="text-2xl md:text-4xl font-heading font-semibold text-white leading-tight tracking-tight">
-            Professional websites. <span className="text-white leading-tight tracking-tight">Trusted results.</span>
-            <br className="hidden md:block" />
-            <span className="text-gradient"> We build on credibility.</span>
-          </p>
         </ScrollFade>
 
         {/* Heading */}
