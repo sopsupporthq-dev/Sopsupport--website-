@@ -187,7 +187,7 @@ export function AtmosphericBackground({ variant = "default" }: { variant?: BgVar
       {/* Fade to black toward footer */}
       <div
         className="fixed bottom-0 left-0 right-0 pointer-events-none"
-        style={{ height: "340px", background: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.88) 100%)", zIndex: 1 }}
+        style={{ height: "520px", background: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 35%, rgba(0,0,0,0.75) 65%, rgba(0,0,0,0.96) 100%)", zIndex: 1 }}
       />
       <style>{`
         @keyframes bgGlow1 { 0%,100%{translate:0px 0px} 33%{translate:-18px 22px} 66%{translate:14px -14px} }
