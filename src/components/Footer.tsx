@@ -36,10 +36,9 @@ const footerLinks = {
 export function Footer() {
   return (
     <footer
-      className="relative border-t border-white/10 pt-16 pb-8 overflow-hidden"
+      className="relative pt-16 pb-8 bg-black z-10"
       data-testid="footer"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 pointer-events-none" />
 
       <div className="max-w-[1600px] mx-auto px-6 xl:px-12 relative z-10">
         <motion.div
