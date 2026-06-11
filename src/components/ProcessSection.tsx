@@ -36,7 +36,7 @@ const steps = [
 
 export function ProcessSection() {
   return (
-    <section id="process" className="py-24 relative overflow-hidden" data-testid="section-process">
+    <section id="process" className="py-24 relative" data-testid="section-process">
       <div className="absolute inset-0 pointer-events-none">
         <div className="animated-bg-blob bg-emerald-600 w-[400px] h-[400px] top-0 right-[-100px] opacity-15" />
       </div>
