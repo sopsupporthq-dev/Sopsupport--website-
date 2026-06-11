@@ -33,7 +33,7 @@ const nodeVariant = {
 
 export function GrowthSystemSection() {
   return (
-    <section id="growth-system" className="py-24 relative overflow-hidden" data-testid="section-growth-system">
+    <section id="growth-system" className="py-24 relative" data-testid="section-growth-system">
       <div className="absolute inset-0 pointer-events-none">
         <div className="animated-bg-blob bg-teal-500 w-[500px] h-[500px] bottom-[-100px] left-[-100px] opacity-20" />
       </div>
