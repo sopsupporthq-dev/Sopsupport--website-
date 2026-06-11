@@ -13,6 +13,8 @@ export const Route = createFileRoute("/meet-our-team")({
 import { motion } from "framer-motion";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { AtmosphericBackground } from "@/components/backgrounds/AtmosphericBackground";
+
 import { Linkedin, Code2, Brain, Cloud, Globe, Quote } from "lucide-react";
 
 const skills = [
@@ -26,6 +28,7 @@ export default function MeetOurTeam() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
+      <AtmosphericBackground variant="default" />
       <main className="pt-32 pb-24 px-6">
         <div className="max-w-5xl mx-auto">
 
