@@ -22,8 +22,6 @@ export function TrustServicePreview() {
       {/* Emerald/cyan radial wash to color the grid */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(16,185,129,0.10),transparent_70%)]" />
       {/* Top + bottom fade overlays to blend with neighboring sections */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[oklch(0.18_0.035_165)] to-transparent z-[1]" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[oklch(0.18_0.035_165)] to-transparent z-[1]" />
 
       <div className="max-w-7xl mx-auto px-5 md:px-6 relative z-10">
         {/* Tagline replacing the trust strip */}
