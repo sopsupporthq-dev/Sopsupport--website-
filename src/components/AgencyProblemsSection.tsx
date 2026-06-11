@@ -22,7 +22,7 @@ const cardVariant = {
 
 export function AgencyProblemsSection() {
   return (
-    <section id="problems" className="py-24 relative overflow-hidden" data-testid="section-problems">
+    <section id="problems" className="py-24 relative" data-testid="section-problems">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
