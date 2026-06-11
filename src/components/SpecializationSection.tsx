@@ -25,10 +25,6 @@ export function SpecializationSection() {
             transition={{ duration: 0.6 }}
             className="glass-panel rounded-2xl px-8 py-6 border-emerald-500/25 mb-12 max-w-2xl mx-auto"
           >
-            <p className="text-2xl lg:text-3xl font-bold text-white leading-snug">
-              Professional websites. Trusted Results {" "}
-              <span className="text-gradient">We build on credibility.</span>
-            </p>
           </motion.div>
 
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
