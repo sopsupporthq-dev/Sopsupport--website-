@@ -36,7 +36,7 @@ const footerLinks = {
 export function Footer() {
   return (
     <footer
-      className="relative pt-16 pb-8 bg-black z-10"
+      className="relative pt-16 pb-8 z-10" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.92) 0%, #000 40%)" }}
       data-testid="footer"
     >
 
