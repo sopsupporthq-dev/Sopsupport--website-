@@ -14,7 +14,7 @@ import { ScrollFade } from "@/components/ScrollFade";
 
 export function TrustServicePreview() {
   return (
-    <section className="relative py-20 md:py-28" data-testid="section-what-we-build">
+    <section className="relative py-10 md:py-18" data-testid="section-what-we-build">
       {/* Subtle grid backdrop with emerald/cyan tint */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.09] bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2244%22 height=%2244%22><path d=%22M0 43.5h44M43.5 0v44%22 stroke=%22white%22 stroke-width=%221%22 fill=%22none%22/></svg>')]"
