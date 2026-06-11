@@ -14,7 +14,7 @@ import { ScrollFade } from "@/components/ScrollFade";
 
 export function TrustServicePreview() {
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden" data-testid="section-what-we-build">
+    <section className="relative py-20 md:py-28" data-testid="section-what-we-build">
       {/* Subtle grid backdrop with emerald/cyan tint */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.09] bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2244%22 height=%2244%22><path d=%22M0 43.5h44M43.5 0v44%22 stroke=%22white%22 stroke-width=%221%22 fill=%22none%22/></svg>')]"
@@ -117,16 +117,16 @@ const OUTCOMES: Outcome[] = [
 function toneClasses(tone: Outcome["tone"]) {
   switch (tone) {
     case "hero":
-      return "border-emerald-400/25 bg-gradient-to-br from-emerald-500/20 via-emerald-500/5 to-cyan-500/15";
+      return "border-emerald-400/15 bg-gradient-to-br from-emerald-500/10 via-emerald-500/[0.03] to-cyan-500/[0.07]";
     case "accent":
-      return "border-white/10 bg-gradient-to-br from-cyan-500/15 via-transparent to-emerald-500/10";
+      return "border-white/[0.07] bg-gradient-to-br from-cyan-500/[0.08] via-transparent to-emerald-500/[0.05]";
     case "dark":
-      return "border-white/10 bg-black/30 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.18),transparent_60%)]";
+      return "border-white/[0.07] bg-black/15 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.09),transparent_60%)]";
     case "outline":
-      return "border-emerald-400/20 bg-transparent";
+      return "border-emerald-400/10 bg-transparent";
     case "glass":
     default:
-      return "border-white/10 bg-white/[0.04] backdrop-blur-sm";
+      return "border-white/[0.07] bg-white/[0.025] backdrop-blur-sm";
   }
 }
 
@@ -149,8 +149,8 @@ function OutcomeGrid() {
             {/* decorative glows */}
             {isHero && (
               <>
-                <div className="absolute -top-24 -right-20 w-72 h-72 rounded-full bg-emerald-400/30 blur-3xl pointer-events-none" />
-                <div className="absolute -bottom-24 -left-10 w-64 h-64 rounded-full bg-cyan-400/20 blur-3xl pointer-events-none" />
+                <div className="absolute -top-24 -right-20 w-72 h-72 rounded-full bg-emerald-400/12 blur-3xl pointer-events-none" />
+                <div className="absolute -bottom-24 -left-10 w-64 h-64 rounded-full bg-cyan-400/[0.08] blur-3xl pointer-events-none" />
               </>
             )}
 
