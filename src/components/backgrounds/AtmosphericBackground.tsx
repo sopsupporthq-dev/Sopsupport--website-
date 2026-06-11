@@ -2,28 +2,30 @@
 
 import { useEffect, useRef } from "react";
 
-// ─────────────────────────────────────────────────────────────────
-// Variant configs — add a new key to create a new page theme
-// ─────────────────────────────────────────────────────────────────
 const VARIANTS = {
 
-  // Home page — rich, many elements spread across full scroll height
   home: {
     glows: [
-      // Top-right emerald anchor
-      { pos: { top: "-200px", right: "-120px" },   w: 560, h: 560, color: "rgba(16,185,129,0.12)",  blur: 100, duration: 11, depth: 0.06 },
-      // Mid-left cyan
-      { pos: { top: "38vh",   left: "-140px" },    w: 420, h: 420, color: "rgba(6,182,212,0.09)",   blur: 80,  duration: 14, depth: 0.11 },
-      // Lower-center teal spread
-      { pos: { top: "72vh",   left: "22%" },       w: 660, h: 280, color: "rgba(34,197,94,0.08)",   blur: 100, duration: 17, depth: 0.04 },
-      // Right-side mid accent
-      { pos: { top: "105vh",  right: "-60px" },    w: 380, h: 380, color: "rgba(6,182,212,0.08)",   blur: 80,  duration: 10, depth: 0.14 },
-      // Deep left
-      { pos: { top: "155vh",  left: "-80px" },     w: 480, h: 480, color: "rgba(16,185,129,0.08)",  blur: 90,  duration: 13, depth: 0.07 },
-      // Deep right cyan
-      { pos: { top: "210vh",  right: "-100px" },   w: 400, h: 400, color: "rgba(6,182,212,0.07)",   blur: 80,  duration: 15, depth: 0.09 },
-      // Bottom floor glow
-      { pos: { bottom: "0px", left: "18%" },       w: 640, h: 240, color: "rgba(34,197,94,0.07)",   blur: 100, duration: 18, depth: 0.05 },
+      // Top-left — deep navy blue
+      { pos: { top: "-100px", left: "-150px" },    w: 600, h: 600, color: "rgba(30,58,138,0.55)",   blur: 120, duration: 13, depth: 0.05 },
+      // Top-right — cyan-teal
+      { pos: { top: "-80px",  right: "-100px" },   w: 500, h: 500, color: "rgba(6,182,212,0.18)",   blur: 100, duration: 11, depth: 0.07 },
+      // Mid-left — indigo-blue
+      { pos: { top: "30vh",   left: "-120px" },    w: 480, h: 480, color: "rgba(49,46,129,0.40)",   blur: 110, duration: 15, depth: 0.09 },
+      // Mid-right — emerald
+      { pos: { top: "35vh",   right: "-80px" },    w: 420, h: 420, color: "rgba(16,185,129,0.14)",  blur: 90,  duration: 12, depth: 0.11 },
+      // Center — subtle blue spread
+      { pos: { top: "50vh",   left: "30%" },       w: 700, h: 320, color: "rgba(37,99,235,0.10)",   blur: 130, duration: 18, depth: 0.04 },
+      // Lower-left — navy
+      { pos: { top: "90vh",   left: "-100px" },    w: 520, h: 520, color: "rgba(30,58,138,0.35)",   blur: 110, duration: 14, depth: 0.08 },
+      // Lower-right — cyan
+      { pos: { top: "100vh",  right: "-80px" },    w: 400, h: 400, color: "rgba(6,182,212,0.12)",   blur: 90,  duration: 10, depth: 0.13 },
+      // Deep — emerald-teal
+      { pos: { top: "150vh",  left: "15%" },       w: 600, h: 280, color: "rgba(13,148,136,0.12)",  blur: 110, duration: 20, depth: 0.05 },
+      // Deep right — indigo
+      { pos: { top: "160vh",  right: "-60px" },    w: 440, h: 440, color: "rgba(67,56,202,0.25)",   blur: 100, duration: 16, depth: 0.09 },
+      // Bottom floor — blue-green blend
+      { pos: { bottom: "0px", left: "20%" },       w: 700, h: 260, color: "rgba(6,182,212,0.09)",   blur: 120, duration: 22, depth: 0.04 },
     ],
     squares: [
       { top:"8vh",   left:"3%",    size:52,  rot:12,  o:0.05, dur:12, depth:0.13 },
@@ -58,14 +60,15 @@ const VARIANTS = {
     ],
   },
 
-  // Interior pages — calmer, 3 glows, fewer elements
   default: {
     glows: [
-      { pos: { top: "-220px",  right: "-160px" }, w: 640, h: 640, color: "rgba(16,185,129,0.09)",  blur: 130, duration: 18, depth: 0.04 },
-      { pos: { top: "32vh",    left: "-180px"  }, w: 540, h: 540, color: "rgba(6,182,212,0.07)",   blur: 110, duration: 22, depth: 0.07 },
-      { pos: { top: "72vh",    left: "22%"     }, w: 720, h: 340, color: "rgba(34,197,94,0.06)",   blur: 110, duration: 26, depth: 0.03 },
-      { pos: { top: "130vh",   right: "-90px"  }, w: 460, h: 460, color: "rgba(6,182,212,0.06)",   blur: 90,  duration: 20, depth: 0.05 },
-      { pos: { bottom: "0px",  left: "12%"     }, w: 680, h: 280, color: "rgba(34,197,94,0.05)",   blur: 100, duration: 16, depth: 0.04 },
+      { pos: { top: "-180px",  left: "-120px"  }, w: 580, h: 580, color: "rgba(30,58,138,0.45)",   blur: 130, duration: 18, depth: 0.04 },
+      { pos: { top: "-100px",  right: "-120px" }, w: 500, h: 500, color: "rgba(6,182,212,0.14)",   blur: 110, duration: 14, depth: 0.06 },
+      { pos: { top: "35vh",    left: "-150px"  }, w: 500, h: 500, color: "rgba(49,46,129,0.30)",   blur: 110, duration: 22, depth: 0.07 },
+      { pos: { top: "40vh",    right: "-80px"  }, w: 420, h: 420, color: "rgba(16,185,129,0.11)",  blur: 90,  duration: 16, depth: 0.09 },
+      { pos: { top: "80vh",    left: "20%"     }, w: 640, h: 280, color: "rgba(37,99,235,0.08)",   blur: 120, duration: 26, depth: 0.03 },
+      { pos: { top: "130vh",   right: "-80px"  }, w: 440, h: 440, color: "rgba(67,56,202,0.20)",   blur: 100, duration: 20, depth: 0.05 },
+      { pos: { bottom: "0px",  left: "12%"     }, w: 660, h: 260, color: "rgba(6,182,212,0.08)",   blur: 110, duration: 16, depth: 0.04 },
     ],
     squares: [
       { top:"11vh",  left:"6%",    size:40, rot:12,  o:0.04, dur:15, depth:0.11 },
@@ -90,9 +93,6 @@ const VARIANTS = {
 
 } satisfies Record<string, VariantConfig>;
 
-// ─────────────────────────────────────────────────────────────────
-// Types
-// ─────────────────────────────────────────────────────────────────
 interface GlowItem   { pos: Record<string,string>; w:number; h:number; color:string; blur:number; duration:number; depth:number }
 interface SquareItem { top:string; left?:string; right?:string; size:number; rot:number; o:number; dur:number; depth:number }
 interface PosItem    { top:string; left?:string; right?:string }
@@ -100,9 +100,6 @@ interface VariantConfig { glows:GlowItem[]; squares:SquareItem[]; dots:PosItem[]
 
 export type BgVariant = keyof typeof VARIANTS;
 
-// ─────────────────────────────────────────────────────────────────
-// Component
-// ─────────────────────────────────────────────────────────────────
 export function AtmosphericBackground({ variant = "default" }: { variant?: BgVariant }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const rafRef       = useRef<number>(0);
@@ -139,7 +136,8 @@ export function AtmosphericBackground({ variant = "default" }: { variant?: BgVar
         className="absolute inset-0"
         style={{
           opacity: 0.015,
-          backgroundImage: `linear-gradient(rgba(255,255,255,.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.2) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(255,255,255,.2) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(255,255,255,.2) 1px, transparent 1px)`,
           backgroundSize: "80px 80px",
         }}
       />
@@ -171,7 +169,7 @@ export function AtmosphericBackground({ variant = "default" }: { variant?: BgVar
       {cfg.dots.map((d, i) => (
         <div key={i} data-depth={0.10 + (i % 5) * 0.03}
           className="absolute w-[2px] h-[2px] rounded-full"
-          style={{ top:d.top, left:d.left, right:d.right, background:"rgba(160,255,190,0.3)", transform:"translateY(var(--px,0px))" }}
+          style={{ top:d.top, left:d.left, right:d.right, background:"rgba(180,220,255,0.4)", transform:"translateY(var(--px,0px))" }}
         />
       ))}
 
@@ -180,8 +178,8 @@ export function AtmosphericBackground({ variant = "default" }: { variant?: BgVar
         <div key={i} data-depth={0.13 + (i % 3) * 0.04}
           className="absolute" style={{ top:c.top, left:c.left, right:c.right, width:12, height:12, transform:"translateY(var(--px,0px))" }}
         >
-          <span className="absolute top-[5px] left-0 w-[12px] h-px bg-emerald-400/15" />
-          <span className="absolute top-0 left-[5px] w-px h-[12px] bg-emerald-400/15" />
+          <span className="absolute top-[5px] left-0 w-[12px] h-px bg-cyan-400/20" />
+          <span className="absolute top-0 left-[5px] w-px h-[12px] bg-cyan-400/20" />
         </div>
       ))}
 
