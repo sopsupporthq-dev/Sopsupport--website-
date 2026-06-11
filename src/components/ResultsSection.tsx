@@ -46,7 +46,7 @@ const cardVariant = {
 
 export function ResultsSection() {
   return (
-    <section id="results" className="py-24 relative overflow-hidden" data-testid="section-results">
+    <section id="results" className="py-24 relative" data-testid="section-results">
       <div className="absolute inset-0 pointer-events-none">
         <div className="animated-bg-blob bg-cyan-600 w-[500px] h-[500px] top-[-100px] left-[10%] opacity-15" />
       </div>
