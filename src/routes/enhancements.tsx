@@ -13,6 +13,9 @@ import {
   Check,
   type LucideIcon,
 } from "lucide-react";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { AtmosphericBackground } from "@/components/backgrounds/AtmosphericBackground";
 
 export const Route = createFileRoute("/enhancements")({
   head: () => ({
@@ -208,24 +211,12 @@ const fadeUp = {
 
 function EnhancementsPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#04100d] text-slate-100 antialiased">
-      {/* Ambient glow */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-40 left-1/2 h-[600px] w-[900px] -translate-x-1/2 rounded-full bg-emerald-500/20 blur-[140px]" />
-        <div className="absolute top-[40%] -right-40 h-[500px] w-[500px] rounded-full bg-teal-400/15 blur-[120px]" />
-        <div className="absolute bottom-0 -left-40 h-[500px] w-[500px] rounded-full bg-emerald-600/15 blur-[120px]" />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-      </div>
+    <div className="min-h-screen bg-background text-foreground relative">
+      <Header />
+      <AtmosphericBackground variant="default" />
 
       {/* HERO */}
-      <section className="relative mx-auto max-w-7xl px-6 pt-24 pb-20 sm:pt-32 sm:pb-28 lg:px-8">
+      <section className="relative mx-auto max-w-7xl px-6 pt-32 pb-20 sm:pb-28 lg:px-8">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -388,6 +379,7 @@ function EnhancementsPage() {
           </Link>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
