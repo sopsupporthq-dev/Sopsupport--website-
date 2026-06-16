@@ -1,3 +1,7 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PageShell, CTASection } from "@/components/PageShell";
+import { ProcessSection } from "@/components/ProcessSection";
+
 import { motion } from "framer-motion";
 import {
   ClipboardList, Map, PenTool, Rocket, LifeBuoy,
