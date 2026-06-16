@@ -130,7 +130,7 @@ function ClinicalDocumentationQAPage() {
       <AtmosphericBackground variant="default" />
       <Header />
       
-      <main className="relative z-10 pt-32 pb-24 px-5 sm:px-8 lg:px-12">
+      <main className="relative z-10 pt-24 pb-24 px-5 sm:px-8 lg:px-12">
         <div className="max-w-[1280px] mx-auto">
 
           {/* Hero */}
