@@ -22,7 +22,7 @@ export function PageShell({
 
       <Header />
 
-      <main className="relative z-10 px-5 sm:px-8 lg:px-12 py-20 lg:py-28">
+      <main className={`relative z-10 px-5 sm:px-8 lg:px-12 ${title ? "py-20 lg:py-28" : "pb-20"}`}>
         <div className="max-w-[1280px] mx-auto w-full">
           {title && (
             <motion.div
