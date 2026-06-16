@@ -125,35 +125,7 @@ function ClinicalDocumentationQAPage() {
     <div className="min-h-screen bg-background text-foreground relative">
       <AtmosphericBackground variant="default" />
       <Header />
-
-      {/* Floating PDF Button */}
-      <a
-        href={PDF_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed right-4 top-1/2 -translate-y-1/2 z-50 flex flex-col items-center gap-2 group"
-        title="Open Playbook PDF"
-      >
-        <div className="bg-emerald-500 hover:bg-emerald-400 transition-colors rounded-2xl px-3 py-4 shadow-lg shadow-emerald-900/40 flex flex-col items-center gap-2">
-          <ExternalLink className="w-4 h-4 text-white" />
-          <span className="text-[10px] font-bold text-white uppercase tracking-wider [writing-mode:vertical-rl] rotate-180">
-            View PDF
-          </span>
-        </div>
-        <a
-          href={PDF_URL}
-          download="SOP-Support-Home-Health-Digital-Growth-Playbook.pdf"
-          className="bg-white/10 hover:bg-white/20 border border-white/20 transition-colors rounded-2xl px-3 py-3 flex flex-col items-center gap-1"
-          title="Download PDF"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <Download className="w-4 h-4 text-white/70" />
-          <span className="text-[10px] text-white/50 uppercase tracking-wider [writing-mode:vertical-rl] rotate-180">
-            Save
-          </span>
-        </a>
-      </a>
-
+      
       <main className="relative z-10 pt-32 pb-24 px-5 sm:px-8 lg:px-12">
         <div className="max-w-[1280px] mx-auto">
 
