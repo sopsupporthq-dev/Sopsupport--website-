@@ -121,12 +121,6 @@ function RevenueCycleBillingPage() {
               Revenue cycle management and medical billing vendors serving home health and hospice providers operate in a high-trust, high-scrutiny market. Administrators evaluating billing partners research vendors online extensively. A professional, SEO-optimized website helps your company appear in the right searches, communicate expertise clearly, and convert more visitors into qualified leads.
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link to="/contact" className="inline-flex items-center justify-center h-12 px-8 text-sm font-semibold rounded-full text-white bg-gradient-glow group no-default-hover-elevate">
-                Build Your RCM Website <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link to="/contact" className="inline-flex items-center justify-center h-12 px-8 text-sm font-semibold rounded-full text-white glass-panel border border-white/20 hover:border-emerald-400/40 transition-colors">
-                Schedule a Consultation
-              </Link>
             </motion.div>
           </section>
 
