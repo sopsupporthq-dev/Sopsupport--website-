@@ -226,8 +226,7 @@ function LongTermCareProvidersPage() {
               transition={{ duration: 0.6, delay: 0.25 }}
               className="text-base text-white/55 max-w-3xl mx-auto leading-relaxed mb-10"
             >
-              Long-term care and home-based care providers serve one of the most emotionally invested audiences in healthcare — families making extended, high-stakes decisions about ongoing care for a loved one. Organic search is the leading inquiry channel for care providers in 2026, and families spend months researching before making contact. A professional website with strong local SEO helps your organization appear in the right searches, earn trust during the research phase, and convert more inquiries into long-term clients. SOP Support builds modern websites and digital growth systems exclusively for care providers like you.
-            </motion.p>
+              Long-term care decisions often begin with online research. A professional website and strong local SEO help families find, trust, and contact your organization. SOP Support builds modern websites and digital growth systems designed specifically for care providers.
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
