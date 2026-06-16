@@ -235,13 +235,6 @@ function LongTermCareProvidersPage() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-3 justify-center"
             >
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center h-12 px-8 text-sm font-semibold rounded-full text-white bg-gradient-glow group no-default-hover-elevate"
-              >
-                Build Your Long-Term Care Website
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
             </motion.div>
           </section>
 
