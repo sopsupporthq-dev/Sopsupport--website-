@@ -32,24 +32,28 @@ const referralChecklist = [
 
 const websiteFeatures = [
   {
-    title: "Clear Service Pages",
-    body: "Explain skilled nursing, physical therapy, occupational therapy, speech therapy, medical social work, home health aide services, chronic care support, post-hospital care, wound care, and other programs your agency provides.",
+    title: "Referral-Friendly Service Pages",
+    body: "Provide detailed information about skilled nursing, therapy services, wound care, chronic disease management, post-hospital recovery, and specialty programs so referral partners can quickly determine patient eligibility.",
   },
   {
-    title: "Online Referral Form",
-    body: "Give hospitals, physicians, case managers, and community partners a direct way to submit patient information or request follow-up. Keep it simple, secure, and easy to find.",
+    title: "Secure Online Referral Forms",
+    body: "Allow hospitals, physicians, discharge planners, and case managers to submit referrals online through a simple, secure, and HIPAA-conscious referral process available 24/7.",
   },
   {
-    title: "Intake Contact Button",
-    body: "Your intake number or referral contact should be visible throughout the website. Use buttons like 'Refer a Patient', 'Contact Intake', or 'Request Home Health Services'.",
+    title: "Dedicated Intake Team Access",
+    body: "Make it easy for referral sources to reach your intake department with direct phone numbers, email contacts, and clearly visible referral request buttons throughout the website.",
   },
   {
-    title: "Local Service Area Pages",
-    body: "Clearly list the cities, counties, and communities you serve. Service area content supports local SEO and helps your agency appear more relevant in local searches.",
+    title: "Fast Response & Admission Information",
+    body: "Highlight your average response times, admission process, and referral turnaround expectations to help healthcare professionals make confident referral decisions.",
   },
   {
-    title: "Mobile-Friendly Design",
-    body: "Referral partners and families often visit your website from a phone. A modern home health website should load quickly, look professional, and be easy to navigate on any device.",
+    title: "Service Area Coverage",
+    body: "Clearly list the cities, counties, and communities your agency serves so referral partners can quickly verify patient eligibility based on location.",
+  },
+  {
+    title: "Mobile-Optimized Referral Experience",
+    body: "Ensure referral forms, contact options, and service information are fully accessible on mobile devices, allowing providers and families to submit referrals from anywhere.",
   },
 ];
 
@@ -187,12 +191,6 @@ function HomeHealthReferralsPage() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-3 justify-center"
             >
-              <Link to="/contact" className="inline-flex items-center justify-center h-12 px-8 text-sm font-semibold rounded-full text-white bg-gradient-glow group no-default-hover-elevate">
-                Build a Referral-Ready Website <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link to="/contact" className="inline-flex items-center justify-center h-12 px-8 text-sm font-semibold rounded-full text-white glass-panel border border-white/20 hover:border-emerald-400/40 transition-colors">
-                Schedule a Consultation
-              </Link>
             </motion.div>
           </section>
 
