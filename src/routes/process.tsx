@@ -26,16 +26,6 @@ export const Route = createFileRoute("/process")({
 
 function ProcessPage() {
   return (
-    <PageShell
-      eyebrow="Our Process"
-      title={
-        <>
-          How we work <span className="text-gradient">with your agency</span>
-        </>
-      }
-      subtitle="A clear, proven path from first audit to ongoing growth — built for home health, hospice, and home care agencies."
-    >
-      <ProcessSection />
 
       {/* Why our process works */}
       <section className="container mx-auto py-16">
