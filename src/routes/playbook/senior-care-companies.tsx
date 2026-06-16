@@ -120,12 +120,6 @@ function SeniorCareCompaniesPage() {
               Senior care companies face a growing, competitive market. Families researching care for an aging parent go online first. A professional website with strong local SEO helps your company appear in the right searches, build trust before the first call, and convert more inquiries into clients. SOP Support builds modern websites and digital growth systems specifically for care companies like yours.
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link to="/contact" className="inline-flex items-center justify-center h-12 px-8 text-sm font-semibold rounded-full text-white bg-gradient-glow group no-default-hover-elevate">
-                Build Your Senior Care Website <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link to="/contact" className="inline-flex items-center justify-center h-12 px-8 text-sm font-semibold rounded-full text-white glass-panel border border-white/20 hover:border-emerald-400/40 transition-colors">
-                Schedule a Consultation
-              </Link>
             </motion.div>
           </section>
 
