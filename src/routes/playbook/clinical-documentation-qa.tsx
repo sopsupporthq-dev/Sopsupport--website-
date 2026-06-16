@@ -32,24 +32,28 @@ const referralChecklist = [
 
 const websiteFeatures = [
   {
-    title: "Chart Review Workflows",
-    body: "Establish a structured process for reviewing visit notes, assessments, and plans of care before and after submission, so errors are caught early instead of during an audit.",
+    title: "Structured Chart Review Processes",
+    body: "Implement consistent review workflows for assessments, visit notes, care plans, and discharge documentation to identify issues before they become compliance or reimbursement risks.",
   },
   {
-    title: "Compliance Checklists",
-    body: "Use standardized checklists covering signatures, timeliness, medical necessity, coding accuracy, and physician order alignment so every chart meets the same baseline standard.",
+    title: "Documentation Compliance Checks",
+    body: "Verify signatures, dates, physician orders, medical necessity, coding accuracy, and regulatory requirements through standardized QA reviews that support audit readiness.",
   },
   {
-    title: "Real-Time Documentation Alerts",
-    body: "Flag missing signatures, late notes, or inconsistent data points as they happen, giving clinicians the chance to correct issues before a chart is closed.",
+    title: "Error Detection & Resolution",
+    body: "Identify incomplete documentation, inconsistencies, missing information, and potential compliance concerns early so corrections can be made before claims submission or external review.",
   },
   {
-    title: "Audit Trail Tracking",
-    body: "Maintain a clear, time-stamped record of edits, reviews, and approvals for every chart, making it easier to respond quickly to payer or regulatory audits.",
+    title: "Audit-Ready Record Management",
+    body: "Maintain organized, well-documented patient records with clear review histories, helping agencies respond efficiently to payer requests, surveys, and regulatory audits.",
   },
   {
-    title: "Staff Training & Feedback Loops",
-    body: "Turn QA findings into targeted coaching for clinicians and intake staff, reducing repeat errors and improving documentation quality over time.",
+    title: "Performance Reporting & Insights",
+    body: "Track recurring documentation trends, compliance risks, and quality metrics to uncover improvement opportunities and strengthen agency-wide documentation standards.",
+  },
+  {
+    title: "Continuous Staff Education",
+    body: "Use QA findings to provide ongoing training, feedback, and best-practice guidance that helps clinicians improve documentation accuracy, consistency, and compliance.",
   },
 ];
 
