@@ -242,12 +242,6 @@ function LongTermCareProvidersPage() {
                 Build Your Long-Term Care Website
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center h-12 px-8 text-sm font-semibold rounded-full text-white glass-panel border border-white/20 hover:border-emerald-400/40 transition-colors"
-              >
-                Schedule a Consultation
-              </Link>
             </motion.div>
           </section>
 
