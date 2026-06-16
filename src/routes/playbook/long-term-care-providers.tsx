@@ -227,7 +227,8 @@ function LongTermCareProvidersPage() {
               className="text-base text-white/55 max-w-3xl mx-auto leading-relaxed mb-10"
             >
               Long-term care decisions often begin with online research. A professional website and strong local SEO help families find, trust, and contact your organization. SOP Support builds modern websites and digital growth systems designed specifically for care providers.
-
+            </motion.p>
+            
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
