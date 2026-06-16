@@ -34,7 +34,11 @@ const steps = [
   },
 ];
 
-export function ProcessSection() {
+export function ProcessSection({
+  subtitle,
+}: {
+  subtitle?: string;
+}) {
   return (
     <section id="process" className="py-24 relative" data-testid="section-process">
       <div className="absolute inset-0 pointer-events-none">
@@ -59,6 +63,11 @@ export function ProcessSection() {
             How we work{" "}
             <span className="text-gradient">with your agency</span>
           </h2>
+          {subtitle && (
+            <p className="mt-3 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+              {subtitle}
+            </p>
+          )}
         </motion.div>
 
         {/* Desktop timeline */}
