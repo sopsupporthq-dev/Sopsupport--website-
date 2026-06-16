@@ -162,8 +162,8 @@ function ProcessPage() {
 
       <CTASection
         title="Ready to start your growth audit?"
-        subtitle="Book a free consultation and we'll map out the website, SEO and automation systems your agency needs to win more referrals, families and caregivers."
-        ctaLabel="Book a Free Consultation"
+        body="Book a free consultation and we'll map out the website, SEO and automation systems your agency needs to win more referrals, families and caregivers."
+        cta="Book a Free Consultation"
       />
     </PageShell>
   );
