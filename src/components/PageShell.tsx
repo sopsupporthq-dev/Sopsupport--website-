@@ -11,7 +11,7 @@ export function PageShell({
   children,
 }: {
   eyebrow?: string;
-  title: ReactNode;
+  title?: ReactNode;
   subtitle?: ReactNode;
   children: ReactNode;
 }) {
@@ -24,26 +24,28 @@ export function PageShell({
 
       <main className="relative z-10 px-5 sm:px-8 lg:px-12 py-20 lg:py-28">
         <div className="max-w-[1280px] mx-auto w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-14"
-          >
-            {eyebrow && (
-              <span className="inline-block px-4 py-1.5 mb-5 text-xs font-semibold tracking-widest uppercase rounded-full glass-panel text-emerald-300">
-                {eyebrow}
-              </span>
-            )}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight">
-              {title}
-            </h1>
-            {subtitle && (
-              <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-                {subtitle}
-              </p>
-            )}
-          </motion.div>
+          {title && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-14"
+            >
+              {eyebrow && (
+                <span className="inline-block px-4 py-1.5 mb-5 text-xs font-semibold tracking-widest uppercase rounded-full glass-panel text-emerald-300">
+                  {eyebrow}
+                </span>
+              )}
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight">
+                {title}
+              </h1>
+              {subtitle && (
+                <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+                  {subtitle}
+                </p>
+              )}
+            </motion.div>
+          )}
           {children}
         </div>
       </main>
