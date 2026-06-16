@@ -11,11 +11,11 @@ const footerLinks = {
  
   industries: [
     { label: "Home Health Agencies",                       href: "/playbook/home-health-agency-referrals-online" },
-    { label: "Hospice Providers",                          href: "/industries/hospice-providers" },
-    { label: "Senior Care Companies",                      href: "/industries/senior-care-companies" },
-    { label: "Long-Term Care & Home-Based Care Providers", href: "/industries/long-term-care-providers" },
-    { label: "Revenue Cycle & Billing Vendors",            href: "/industries/revenue-cycle-billing" },
-    { label: "Clinical Documentation & QA Firms",          href: "/industries/clinical-documentation-qa" },
+    { label: "Hospice Providers",                          href: "/playbook/hospice-providers" },
+    { label: "Senior Care Companies",                      href: "/playbook/senior-care-companies" },
+    { label: "Long-Term Care & Home-Based Care Providers", href: "/playbook/long-term-care-providers" },
+    { label: "Revenue Cycle & Billing Vendors",            href: "/playbook/revenue-cycle-billing" },
+    { label: "Clinical Documentation & QA Firms",          href: "/playbook/clinical-documentation-qa" },
   ],
  
   quickLinks: [
