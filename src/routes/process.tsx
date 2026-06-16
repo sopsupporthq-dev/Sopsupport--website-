@@ -1,12 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageShell, CTASection } from "@/components/PageShell";
-import { ProcessSection } from "@/components/ProcessSection";
-
 import { motion } from "framer-motion";
 import {
   ClipboardList, Map, PenTool, Rocket, LifeBuoy,
   CheckCircle2, ArrowRight,
 } from "lucide-react";
+import { PageShell, CTASection } from "@/components/PageShell";
+import { ProcessSection } from "@/components/ProcessSection";
 
 const steps = [
   {
@@ -86,6 +85,13 @@ const steps = [
   },
 ];
 
+const dontHaveToDoItems = [
+  { label: "You don't write the content", detail: "We research your services and service areas and write every page. You review and approve." },
+  { label: "You don't manage the technical setup", detail: "Domain, hosting, SSL, analytics, Search Console — we configure all of it." },
+  { label: "You don't chase down updates", detail: "Submit a request and it gets handled. No tickets, no waiting weeks, no extra fees." },
+  { label: "You don't start from scratch when you grow", detail: "New service areas, new programs, expanded services — we add them as your agency evolves." },
+];
+
 const faqs = [
   {
     q: "How long does the full process take from audit to launch?",
@@ -105,169 +111,48 @@ const faqs = [
   },
 ];
 
-export function ProcessSection() {
+export const Route = createFileRoute("/process")({
+  head: () => ({
+    meta: [
+      { title: "Our Process | SOP Support" },
+      {
+        name: "description",
+        content:
+          "See how SOP Support plans, builds, launches, and supports websites and digital growth systems for home health, hospice, and home care agencies.",
+      },
+      { property: "og:title", content: "Our Process | SOP Support" },
+      {
+        property: "og:description",
+        content:
+          "See how SOP Support plans, builds, launches, and supports websites and digital growth systems for home health, hospice, and home care agencies.",
+      },
+      { property: "og:url", content: "/process" },
+    ],
+    links: [{ rel: "canonical", href: "/process" }],
+  }),
+  component: ProcessPage,
+});
+
+function ProcessPage() {
   return (
-    <>
-      {/* Timeline Steps */}
-      <section id="process" className="py-16 relative" data-testid="section-process">
-        <div className="max-w-[1280px] mx-auto px-6 relative z-10">
-
-          {/* Desktop */}
-          <div className="hidden lg:block space-y-6">
-            {steps.map((step, i) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="glass-panel rounded-2xl p-8 grid lg:grid-cols-[200px_1fr_1fr] gap-8 items-start"
-                data-testid={`step-process-${i}`}
-              >
-                {/* Step identity */}
-                <div className="flex flex-col items-start gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/15 border border-emerald-500/30 flex items-center justify-center shadow-[0_0_20px_rgba(16,185,129,0.15)]">
-                    <step.icon className="w-6 h-6 text-emerald-400" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-bold text-emerald-500 tracking-widest block mb-1">{step.number}</span>
-                    <h3 className="text-lg font-bold text-white leading-tight">{step.title}</h3>
-                    <span className="text-xs text-white/40 mt-1 block">{step.duration}</span>
-                  </div>
-                </div>
-
-                {/* Description */}
-                <div>
-                  <p className="text-sm text-white/65 leading-relaxed mb-4">{step.desc}</p>
-                  <div className="p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/15">
-                    <p className="text-xs text-emerald-300/80 leading-relaxed italic">{step.note}</p>
-                  </div>
-                </div>
-
-                {/* Details */}
-                <div>
-                  <p className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-3">What happens in this step</p>
-                  <ul className="space-y-2">
-                    {step.details.map((d, j) => (
-                      <li key={j} className="flex items-start gap-2.5 text-sm text-white/65">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                        {d}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Mobile */}
-          <div className="flex flex-col gap-5 lg:hidden">
-            {steps.map((step, i) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08, duration: 0.5 }}
-                className="glass-panel rounded-2xl p-6"
-                data-testid={`step-process-mobile-${i}`}
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-11 h-11 shrink-0 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center">
-                    <step.icon className="w-5 h-5 text-emerald-400" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-bold text-emerald-500 tracking-widest">{step.number} · {step.duration}</span>
-                    <h3 className="text-sm font-bold text-white mt-0.5">{step.title}</h3>
-                  </div>
-                </div>
-                <p className="text-sm text-white/60 leading-relaxed mb-4">{step.desc}</p>
-                <ul className="space-y-2">
-                  {step.details.map((d, j) => (
-                    <li key={j} className="flex items-start gap-2 text-xs text-white/55">
-                      <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0 mt-0.5" />
-                      {d}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-4 p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/15">
-                  <p className="text-xs text-emerald-300/75 leading-relaxed italic">{step.note}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+    <PageShell
+      eyebrow="Our Process"
+      title={<>How we work <span className="text-gradient">with your agency</span></>}
+      subtitle="A clear, proven path from first audit to ongoing growth — built for home health, hospice, and home care agencies."
+    >
+      <div className="text-center mb-12">
+        <p className="text-muted-foreground max-w-2xl mx-auto">
+          No guesswork, no long onboarding — just a simple path from audit to results.
+        </p>
+        <div className="flex flex-wrap justify-center gap-3 mt-6">
+          <span className="px-4 py-2 rounded-full border text-sm">1. Audit</span>
+          <span className="px-4 py-2 rounded-full border text-sm">2. Build</span>
+          <span className="px-4 py-2 rounded-full border text-sm">3. Launch</span>
+          <span className="px-4 py-2 rounded-full border text-sm">4. Support & Grow</span>
         </div>
-      </section>
-
-      {/* What You Don't Have to Do */}
-      <section className="py-20 relative">
-        <div className="max-w-[1280px] mx-auto px-6 relative z-10">
-          <div className="glass-panel rounded-3xl p-8 md:p-12">
-            <div className="grid md:grid-cols-2 gap-10 items-start">
-              <div>
-                <span className="inline-block px-3 py-1 text-xs font-semibold tracking-widest uppercase rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-5">
-                  What You Don't Have to Do
-                </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                  We handle the technical side so you can focus on care
-                </h2>
-                <p className="text-sm text-white/60 leading-relaxed mb-4">
-                  Most agency owners don't have time to learn web design, SEO, or automation systems — and they shouldn't have to. Running a home health, hospice, or home care agency is already a full-time job.
-                </p>
-                <p className="text-sm text-white/55 leading-relaxed">
-                  Our process is designed to require as little of your time as possible. We ask targeted questions, handle the research and writing, and bring you in for approvals at key milestones. You stay in control without managing the details.
-                </p>
-              </div>
-              <div className="grid gap-4">
-                {[
-                  { label: "You don't write the content", detail: "We research your services and service areas and write every page. You review and approve." },
-                  { label: "You don't manage the technical setup", detail: "Domain, hosting, SSL, analytics, Search Console — we configure all of it." },
-                  { label: "You don't chase down updates", detail: "Submit a request and it gets handled. No tickets, no waiting weeks, no extra fees." },
-                  { label: "You don't start from scratch when you grow", detail: "New service areas, new programs, expanded services — we add them as your agency evolves." },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-white/4 border border-white/8">
-                    <ArrowRight className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <div>
-                      <p className="text-sm font-semibold text-white mb-1">{item.label}</p>
-                      <p className="text-xs text-white/50 leading-relaxed">{item.detail}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-16 relative">
-        <div className="max-w-3xl mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
-            <h2 className="text-2xl md:text-3xl font-bold text-white">Common questions about our process</h2>
-            <p className="mt-3 text-sm text-white/50 max-w-xl mx-auto">Straightforward answers to what most agencies ask before getting started.</p>
-          </motion.div>
-          <div className="space-y-4">
-            {faqs.map((faq, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
-                className="glass-panel rounded-xl p-6"
-              >
-                <h3 className="text-sm font-bold text-white mb-2">{faq.q}</h3>
-                <p className="text-sm text-white/55 leading-relaxed">{faq.a}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
+      </div>
+      <ProcessSection />
+      <CTASection title="Ready to start your growth audit?" />
+    </PageShell>
   );
 }
