@@ -49,17 +49,17 @@ const growthAreas = [
 
 function ResultsPage() {
   return (
-    <PageShell
-      eyebrow="What We Build For"
-      title={
-        <>
-          Built to support{" "}
-          <span className="text-gradient">your agency's growth</span>
-        </>
-      }
-      subtitle="Every website, SEO system, automation workflow and recruitment funnel we build is designed around these outcomes."
-    >
-      <ResultsSection />
+    <PageShell>
+      <ResultsSection
+        eyebrow="What We Build For"
+        title={
+          <>
+            Built to support{" "}
+            <span className="text-gradient">your agency's growth</span>
+          </>
+        }
+        subtitle="Every website, SEO system, automation workflow and recruitment funnel we build is designed around these outcomes."
+      />
 
       <section className="container mx-auto py-16">
         <div className="max-w-4xl mx-auto">
