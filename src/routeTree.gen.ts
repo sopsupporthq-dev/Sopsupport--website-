@@ -13,16 +13,16 @@ import { Route as WhyUsRouteImport } from './routes/why-us'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ResultsRouteImport } from './routes/results'
 import { Route as ResourcesRouteImport } from './routes/resources'
-import { Route as ResourcesCmsEnrollmentMoratoriaImport } from './routes/resources/cms-enrollment-moratoria'
-import { Route as ResourcesWhyProfessionalWebsiteMattersMoratoriaImport } from './routes/resources/why-professional-website-matters'
-import { Route as ResourcesDigitalPresenceChecklistImport } from './routes/resources/digital-presence-checklist'
-import { Route as ResourcesMarketingEssentialsImport } from './routes/resources/marketing-essentials'
 import { Route as ProcessRouteImport } from './routes/process'
 import { Route as MeetOurTeamRouteImport } from './routes/meet-our-team'
 import { Route as LaunchProgramRouteImport } from './routes/launch-program'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ResourcesWhyProfessionalWebsiteMattersRouteImport } from './routes/resources/why-professional-website-matters'
+import { Route as ResourcesMarketingEssentialsRouteImport } from './routes/resources/marketing-essentials'
+import { Route as ResourcesDigitalPresenceChecklistRouteImport } from './routes/resources/digital-presence-checklist'
+import { Route as ResourcesCmsEnrollmentMoratoriaRouteImport } from './routes/resources/cms-enrollment-moratoria'
 
 const WhyUsRoute = WhyUsRouteImport.update({
   id: '/why-us',
@@ -74,6 +74,26 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResourcesWhyProfessionalWebsiteMattersRoute = ResourcesWhyProfessionalWebsiteMattersRouteImport.update({
+  id: '/resources/why-professional-website-matters',
+  path: '/why-professional-website-matters',
+  getParentRoute: () => ResourcesRoute,
+} as any)
+const ResourcesMarketingEssentialsRoute = ResourcesMarketingEssentialsRouteImport.update({
+  id: '/resources/marketing-essentials',
+  path: '/marketing-essentials',
+  getParentRoute: () => ResourcesRoute,
+} as any)
+const ResourcesDigitalPresenceChecklistRoute = ResourcesDigitalPresenceChecklistRouteImport.update({
+  id: '/resources/digital-presence-checklist',
+  path: '/digital-presence-checklist',
+  getParentRoute: () => ResourcesRoute,
+} as any)
+const ResourcesCmsEnrollmentMoratoriaRoute = ResourcesCmsEnrollmentMoratoriaRouteImport.update({
+  id: '/resources/cms-enrollment-moratoria',
+  path: '/cms-enrollment-moratoria',
+  getParentRoute: () => ResourcesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -83,6 +103,10 @@ export interface FileRoutesByFullPath {
   '/meet-our-team': typeof MeetOurTeamRoute
   '/process': typeof ProcessRoute
   '/resources': typeof ResourcesRoute
+  '/resources/cms-enrollment-moratoria': typeof ResourcesCmsEnrollmentMoratoriaRoute
+  '/resources/digital-presence-checklist': typeof ResourcesDigitalPresenceChecklistRoute
+  '/resources/marketing-essentials': typeof ResourcesMarketingEssentialsRoute
+  '/resources/why-professional-website-matters': typeof ResourcesWhyProfessionalWebsiteMattersRoute
   '/results': typeof ResultsRoute
   '/services': typeof ServicesRoute
   '/why-us': typeof WhyUsRoute
@@ -95,6 +119,10 @@ export interface FileRoutesByTo {
   '/meet-our-team': typeof MeetOurTeamRoute
   '/process': typeof ProcessRoute
   '/resources': typeof ResourcesRoute
+  '/resources/cms-enrollment-moratoria': typeof ResourcesCmsEnrollmentMoratoriaRoute
+  '/resources/digital-presence-checklist': typeof ResourcesDigitalPresenceChecklistRoute
+  '/resources/marketing-essentials': typeof ResourcesMarketingEssentialsRoute
+  '/resources/why-professional-website-matters': typeof ResourcesWhyProfessionalWebsiteMattersRoute
   '/results': typeof ResultsRoute
   '/services': typeof ServicesRoute
   '/why-us': typeof WhyUsRoute
@@ -108,6 +136,10 @@ export interface FileRoutesById {
   '/meet-our-team': typeof MeetOurTeamRoute
   '/process': typeof ProcessRoute
   '/resources': typeof ResourcesRoute
+  '/resources/cms-enrollment-moratoria': typeof ResourcesCmsEnrollmentMoratoriaRoute
+  '/resources/digital-presence-checklist': typeof ResourcesDigitalPresenceChecklistRoute
+  '/resources/marketing-essentials': typeof ResourcesMarketingEssentialsRoute
+  '/resources/why-professional-website-matters': typeof ResourcesWhyProfessionalWebsiteMattersRoute
   '/results': typeof ResultsRoute
   '/services': typeof ServicesRoute
   '/why-us': typeof WhyUsRoute
@@ -122,6 +154,10 @@ export interface FileRouteTypes {
     | '/meet-our-team'
     | '/process'
     | '/resources'
+    | '/resources/cms-enrollment-moratoria'
+    | '/resources/digital-presence-checklist'
+    | '/resources/marketing-essentials'
+    | '/resources/why-professional-website-matters'
     | '/results'
     | '/services'
     | '/why-us'
@@ -134,6 +170,10 @@ export interface FileRouteTypes {
     | '/meet-our-team'
     | '/process'
     | '/resources'
+    | '/resources/cms-enrollment-moratoria'
+    | '/resources/digital-presence-checklist'
+    | '/resources/marketing-essentials'
+    | '/resources/why-professional-website-matters'
     | '/results'
     | '/services'
     | '/why-us'
@@ -146,6 +186,10 @@ export interface FileRouteTypes {
     | '/meet-our-team'
     | '/process'
     | '/resources'
+    | '/resources/cms-enrollment-moratoria'
+    | '/resources/digital-presence-checklist'
+    | '/resources/marketing-essentials'
+    | '/resources/why-professional-website-matters'
     | '/results'
     | '/services'
     | '/why-us'
@@ -162,6 +206,13 @@ export interface RootRouteChildren {
   ResultsRoute: typeof ResultsRoute
   ServicesRoute: typeof ServicesRoute
   WhyUsRoute: typeof WhyUsRoute
+}
+
+export interface ResourcesRouteChildren {
+  ResourcesCmsEnrollmentMoratoriaRoute: typeof ResourcesCmsEnrollmentMoratoriaRoute
+  ResourcesDigitalPresenceChecklistRoute: typeof ResourcesDigitalPresenceChecklistRoute
+  ResourcesMarketingEssentialsRoute: typeof ResourcesMarketingEssentialsRoute
+  ResourcesWhyProfessionalWebsiteMattersRoute: typeof ResourcesWhyProfessionalWebsiteMattersRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -193,6 +244,34 @@ declare module '@tanstack/react-router' {
       fullPath: '/resources'
       preLoaderRoute: typeof ResourcesRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/resources/cms-enrollment-moratoria': {
+      id: '/resources/cms-enrollment-moratoria'
+      path: '/cms-enrollment-moratoria'
+      fullPath: '/resources/cms-enrollment-moratoria'
+      preLoaderRoute: typeof ResourcesCmsEnrollmentMoratoriaRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/resources/digital-presence-checklist': {
+      id: '/resources/digital-presence-checklist'
+      path: '/digital-presence-checklist'
+      fullPath: '/resources/digital-presence-checklist'
+      preLoaderRoute: typeof ResourcesDigitalPresenceChecklistRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/resources/marketing-essentials': {
+      id: '/resources/marketing-essentials'
+      path: '/marketing-essentials'
+      fullPath: '/resources/marketing-essentials'
+      preLoaderRoute: typeof ResourcesMarketingEssentialsRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/resources/why-professional-website-matters': {
+      id: '/resources/why-professional-website-matters'
+      path: '/why-professional-website-matters'
+      fullPath: '/resources/why-professional-website-matters'
+      preLoaderRoute: typeof ResourcesWhyProfessionalWebsiteMattersRouteImport
+      parentRoute: typeof ResourcesRoute
     }
     '/process': {
       id: '/process'
@@ -239,6 +318,13 @@ declare module '@tanstack/react-router' {
   }
 }
 
+const ResourcesRouteWithChildren = ResourcesRoute._addFileChildren({
+  ResourcesCmsEnrollmentMoratoriaRoute,
+  ResourcesDigitalPresenceChecklistRoute,
+  ResourcesMarketingEssentialsRoute,
+  ResourcesWhyProfessionalWebsiteMattersRoute,
+})
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
@@ -246,7 +332,7 @@ const rootRouteChildren: RootRouteChildren = {
   LaunchProgramRoute: LaunchProgramRoute,
   MeetOurTeamRoute: MeetOurTeamRoute,
   ProcessRoute: ProcessRoute,
-  ResourcesRoute: ResourcesRoute,
+  ResourcesRoute: ResourcesRouteWithChildren,
   ResultsRoute: ResultsRoute,
   ServicesRoute: ServicesRoute,
   WhyUsRoute: WhyUsRoute,
