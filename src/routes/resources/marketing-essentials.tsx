@@ -17,7 +17,7 @@ export const Route = createFileRoute("/resources/marketing-essentials")({
   component: MarketingEssentialsPage,
 });
 
-const PDF_PATH = "/assets/pdfs/marketing-essentials.pdf";
+const PDF_PATH = "/pdfs/marketing-essentials.pdf";
 
 const pillars = [
   {
