@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowLeft, Download, ExternalLink, ChevronRight } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
@@ -104,13 +104,13 @@ function ResourceCarousel() {
 
               {/* Action buttons */}
               <div className="flex flex-wrap gap-3">
-                <Link
-                  to={resource.pageRoute}
+                <a
+                  href={resource.pageRoute}
                   className="inline-flex items-center gap-2 h-11 px-7 text-sm font-semibold rounded-full text-white bg-gradient-glow group no-default-hover-elevate"
                 >
                   {resource.buttonText}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </a>
                 <a
                   href={resource.pdfPath}
                   download
