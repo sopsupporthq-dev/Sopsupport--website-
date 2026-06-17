@@ -91,7 +91,7 @@ export const Route = createRootRouteWithContext<{
         content:
           "Premium websites, local SEO, automation and recruitment systems built for home health, hospice and home care agencies.",
       },
-      { property: "og:title", content: "SOP Support" },
+      { property: "og:title", content: "Get SOP Support" },
       {
         property: "og:description",
         content:
@@ -102,6 +102,18 @@ export const Route = createRootRouteWithContext<{
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "SOP Support",
+          "alternateName": "SOP Support — Websites & Growth Systems for Care Agencies",
+          "url": "https://www.getsopsupport.com",
+        }),
+      },
+    ],
   }),
 
   component: RootComponent,
