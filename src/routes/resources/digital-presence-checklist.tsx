@@ -17,7 +17,7 @@ export const Route = createFileRoute("/resources/digital-presence-checklist")({
   component: DigitalPresenceChecklistPage,
 });
 
-const PDF_PATH = "public/assets/pdfs/digital-presence-checklist.pdf";
+const PDF_PATH = "public/pdfs/digital-presence-checklist.pdf";
 
 const checklistItems = [
   {
