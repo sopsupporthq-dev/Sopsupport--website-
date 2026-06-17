@@ -17,7 +17,7 @@ export const Route = createFileRoute("/resources/why-professional-website-matter
   component: WhyWebsiteMattersPage,
 });
 
-const PDF_PATH = "/assets/pdfs/why-professional-website-matters.pdf";
+const PDF_PATH = "/pdfs/why-professional-website-matters.pdf";
 
 const reasons = [
   { icon: Shield, title: "Build Trust and Credibility", body: "Your website is often the first impression potential patients, families, referral partners, and healthcare professionals have of your organization. A modern, professionally designed website demonstrates that your agency is organized, compliant, and committed to delivering exceptional care. It reassures visitors that they are dealing with a legitimate and reliable provider — before a single conversation happens." },
