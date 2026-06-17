@@ -17,7 +17,7 @@ export const Route = createFileRoute("/resources/cms-enrollment-moratoria")({
   component: CMSMoratoriaPage,
 });
 
-const PDF_PATH = "/assets/pdfs/cms-enrollment-moratoria.pdf";
+const PDF_PATH = "public/assets/pdfs/cms-enrollment-moratoria.pdf";
 
 const whyMatters = [
   { icon: Shield, title: "Combating Fraud, Waste, and Abuse", body: "Enrollment moratoria are primarily used as a preventive measure against fraudulent enrollment activities. CMS analyzes risk indicators and historical trends to identify areas where additional safeguards are necessary." },
