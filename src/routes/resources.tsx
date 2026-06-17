@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowLeft, Download, ExternalLink, ChevronRight } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import { PageShell, CTASection } from "@/components/PageShell";
-import { resources } from "@/routes/resources";
+import { resources } from "@/config/resources.ts";
 
 export const Route = createFileRoute("/resources")({
   head: () => ({
