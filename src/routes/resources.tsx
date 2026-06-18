@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Outlet, useMatches } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowLeft, Download, ExternalLink, ChevronRight } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
@@ -199,6 +199,15 @@ function ResourceCarousel() {
 }
 
 function ResourcesPage() {
+  const matches = useMatches();
+  const isChildRoute = matches.some(
+    (m) => m.routeId !== "/resources" && m.routeId.startsWith("/resources/")
+  );
+
+  if (isChildRoute) {
+    return <Outlet />;
+  }
+
   return (
     <PageShell
       eyebrow="Resources"
