@@ -1,0 +1,15 @@
+-- The original policy ("Authenticated users can view submissions") allowed
+-- ANY authenticated Supabase user — not just an admin — to read every row
+-- in contact_submissions, which stores names, emails, phone numbers and
+-- messages. This project doesn't currently have an admin/role system wired
+-- up, so the safest fix is to remove public read access entirely.
+--
+-- With this policy dropped, submissions can still be viewed via the
+-- Supabase dashboard (as the project owner) or through a server-side client
+-- using the service role key (see src/integrations/supabase/client.server.ts),
+-- both of which bypass RLS. Inserts are unaffected — the public "Anyone can
+-- submit contact form" policy is untouched, so the form itself keeps working.
+--
+-- If you later add real user accounts with an admin flag or role, replace
+-- this with a policy scoped to that flag/role instead of "authenticated".
+DROP POLICY IF EXISTS "Authenticated users can view submissions" ON public.contact_submissions;
